@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.3.xsd">
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x010C" DeviceID="0x0009">
+			<InfoText TextId="T_ID_DEV_DESCRIPTION" />
+			<VendorName Value="HMS Industrial Networks" />
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="General" ProductFamily="Anybus CompactCom PRT 2-Port" />
+		</DeviceFunction>
+		<ApplicationProcess>
+
+<!-- ============================================================================================ -->
+<!--   List of Device Access Points (DAP)                                                         -->
+<!-- ============================================================================================ -->
+			<DeviceAccessPointList>
+				<DeviceAccessPointItem ID="DAP V1.0" PhysicalSlots="0..64" ModuleIdentNumber="0x00000001" MinDeviceInterval="64" ImplementationType="NP30" DNS_CompatibleName="ABCC-PRT-2-Port" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" NameOfStationNotTransferable="true" PNIO_Version="V1.0">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V1" />
+						<InfoText TextId="T_ID_V1_DEV_DESCRIPTION" />
+						<VendorName Value="HMS Industrial Networks" />
+						<OrderNumber Value="ABCC-PRT (2-Port)" />
+						<HardwareRelease Value="2" />
+						<SoftwareRelease Value="V2.7" />
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="324" MaxOutputLength="324" />
+					<UseableModules>
+					<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT1B" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT1W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT2W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT4W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT1B" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT1W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT2W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT4W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_F_IO_3DIN1DOUT" AllowedInSlots="1" />
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.0" SubmoduleIdentNumber="0x00000000" API="0" Writeable_IM_Records="1 2 3 4">
+							<IOData IOPS_Length="1" IOCS_Length="1" />
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V1" />
+								<InfoText TextId="T_ID_V1_DEV_DESCRIPTION" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+					</Graphics>
+				</DeviceAccessPointItem>
+
+				<DeviceAccessPointItem ID="DAP V1.5" PhysicalSlots="0..64" ModuleIdentNumber="0x00000011" MinDeviceInterval="64" ImplementationType="NP30" DNS_CompatibleName="ABCC-PRT-2-Port" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" NameOfStationNotTransferable="true" PNIO_Version="V1.5">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15" />
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION" />
+						<VendorName Value="HMS Industrial Networks" />
+						<OrderNumber Value="ABCC-PRT (2-Port)" />
+						<HardwareRelease Value="2" />
+						<SoftwareRelease Value="V2.7" />
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="324" MaxOutputLength="324" />
+					<UseableModules>
+					<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT1B" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT1W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT2W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT4W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT1B" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT1W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT2W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT4W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_F_IO_3DIN1DOUT" AllowedInSlots="1" />
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5" SubmoduleIdentNumber="0x00000001" API="0" Writeable_IM_Records="1 2 3 4">
+							<IOData IOPS_Length="1" IOCS_Length="1" />
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15" />
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+					</Graphics>
+				</DeviceAccessPointItem>
+
+				<DeviceAccessPointItem ID="DAP V2.0" PhysicalSlots="0..64" ModuleIdentNumber="0x00000011" MinDeviceInterval="64" ImplementationType="NP30" DNS_CompatibleName="ABCC-PRT-2-Port" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" NameOfStationNotTransferable="true" RequiredSchemaVersion="V2.25" ParameterizationSpeedupSupported="true" PowerOnToCommReady="1500" PNIO_Version="V2.2">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2" />
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+						<VendorName Value="HMS Industrial Networks" />
+						<OrderNumber Value="ABCC-PRT (2-Port)" />
+						<HardwareRelease Value="2" />
+						<SoftwareRelease Value="V2.7" />
+					</ModuleInfo>
+
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE" />
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1" />
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2" />
+					</SubslotList>
+
+					<IOConfigData MaxInputLength="324" MaxOutputLength="324" />
+
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT1B" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT1W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT2W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT4W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT1B" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT1W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT2W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT4W" AllowedInSlots="1..64" />
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_F_IO_3DIN1DOUT" AllowedInSlots="1" />
+					</UseableModules>
+
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0" SubmoduleIdentNumber="0x00000001" API="0" Writeable_IM_Records="1 2 3 4">
+							<IOData IOPS_Length="1" IOCS_Length="1" />
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2" />
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" DCP_HelloSupported="true" IsochroneModeSupported="false" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" />
+						<PortSubmoduleItem ID="Port 2" SubslotNumber="32770" SubmoduleIdentNumber="0x0004" MAUTypes="16" TextId="T_ID_PORT2" />
+					</SystemDefinedSubmoduleList>
+
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+					</Graphics>
+				</DeviceAccessPointItem>
+
+			</DeviceAccessPointList>
+
+<!-- List of modules -->
+
+			<ModuleList>
+
+				<!-- Output 1 byte -->
+				<ModuleItem ID="ID_MODULE_OUTPUT1B" ModuleIdentNumber="0x00000020">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT1B" />
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT1B" />
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT1B" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned8" TextId="T_ID_OUTPUT" />
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT1B" />
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT1B" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Output 1 word -->
+				<ModuleItem ID="ID_MODULE_OUTPUT1W" ModuleIdentNumber="0x00000030">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT1W" />
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT1W" />
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT1W" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT" />
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT1W" />
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT1W" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Output 2 word -->
+				<ModuleItem ID="ID_MODULE_OUTPUT2W" ModuleIdentNumber="0x00000040">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT2W" />
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT2W" />
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT2W" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT" />
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT2W" />
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT2W" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Output 4 word -->
+				<ModuleItem ID="ID_MODULE_OUTPUT4W" ModuleIdentNumber="0x00000050">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT4W" />
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT4W" />
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT4W" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT" />
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT" />
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT4W" />
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT4W" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Input 1 byte -->
+				<ModuleItem ID="ID_MODULE_INPUT1B" ModuleIdentNumber="0x00000002">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT1B" />
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT1B" />
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT1B" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned8" TextId="T_ID_INPUT" />
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT1B" />
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT1B" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Input 1 Word -->
+				<ModuleItem ID="ID_MODULE_INPUT1W" ModuleIdentNumber="0x00000003">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT1W" />
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT1W" />
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT1W" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT" />
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT1W" />
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT1W" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Input 2 Word -->
+				<ModuleItem ID="ID_MODULE_INPUT2W" ModuleIdentNumber="0x00000004">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT2W" />
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT2W" />
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT2W" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT" />
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT2W" />
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT2W" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Input 4 Word -->
+				<ModuleItem ID="ID_MODULE_INPUT4W" ModuleIdentNumber="0x00000005">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT4W" />
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT4W" />
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT4W" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT" />
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT" />
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT4W" />
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT4W" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Functional safety, 3 inputs, 1 output -->
+				<ModuleItem ID="ID_MODULE_F_IO_3DIN1DOUT" ModuleIdentNumber="0x00010001">
+					<ModuleInfo CategoryRef="CAT_REF_FUNCTIONAL_SAFETY">
+						<Name TextId="T_ID_MODULE_NAME_T100_3DIN1DOUT"/>
+						<InfoText TextId="T_ID_MODULE_INFO_T100_3DIN1DOUT"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_F_IO" SubmoduleIdentNumber="0x00000000" API="0" PROFIsafeSupported="1" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescVersion="1" F_IO_StructureDescCRC="22158">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned8" UseAsBits="true" TextId="T_ID_1SDIN">
+										<BitDataItem BitOffset="0" TextId="T_DI_CH0"/>
+										<BitDataItem BitOffset="1" TextId="T_DI_CH1"/>
+										<BitDataItem BitOffset="2" TextId="T_DI_CH2"/>
+										<BitDataItem BitOffset="3" TextId="T_DI_CH3"/>
+										<BitDataItem BitOffset="4" TextId="T_DI_CH4"/>
+										<BitDataItem BitOffset="5" TextId="T_DI_CH5"/>
+										<BitDataItem BitOffset="6" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="7" TextId="T_DUMMY_BIT"/>
+									</DataItem>
+									<DataItem DataType="Unsigned8" UseAsBits="true" TextId="T_ID_1SDIN">
+										<BitDataItem BitOffset="0" TextId="T_QDI_CH0"/>
+										<BitDataItem BitOffset="1" TextId="T_QDI_CH1"/>
+										<BitDataItem BitOffset="2" TextId="T_QDI_CH2"/>
+										<BitDataItem BitOffset="3" TextId="T_QDI_CH3"/>
+										<BitDataItem BitOffset="4" TextId="T_QDI_CH4"/>
+										<BitDataItem BitOffset="5" TextId="T_QDI_CH5"/>
+										<BitDataItem BitOffset="6" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="7" TextId="T_DUMMY_BIT"/>
+									</DataItem>
+									<DataItem DataType="Unsigned8" UseAsBits="true" TextId="T_ID_1SDIN">
+										<BitDataItem BitOffset="0" TextId="T_QDO_CH0"/>
+										<BitDataItem BitOffset="1" TextId="T_QDO_CH1"/>
+										<BitDataItem BitOffset="2" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="3" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="4" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="5" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="6" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="7" TextId="T_DUMMY_BIT"/>
+									</DataItem>
+									<DataItem DataType="F_MessageTrailer4Byte" TextId="T_ID_S_SafetyTrailer"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned8" UseAsBits="true" TextId="T_ID_1SDOUT">
+										<BitDataItem BitOffset="0" TextId="T_DO_CH0"/>
+										<BitDataItem BitOffset="1" TextId="T_DO_CH1"/>
+										<BitDataItem BitOffset="2" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="3" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="4" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="5" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="6" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="7" TextId="T_DUMMY_BIT"/>
+									</DataItem>
+									<DataItem DataType="Unsigned8" UseAsBits="true" TextId="T_ID_1SDOUT">
+										<BitDataItem BitOffset="0" TextId="T_DI_CH0_RESET"/>
+										<BitDataItem BitOffset="1" TextId="T_DI_CH1_RESET"/>
+										<BitDataItem BitOffset="2" TextId="T_DI_CH2_RESET"/>
+										<BitDataItem BitOffset="3" TextId="T_DI_CH3_RESET"/>
+										<BitDataItem BitOffset="4" TextId="T_DI_CH4_RESET"/>
+										<BitDataItem BitOffset="5" TextId="T_DI_CH5_RESET"/>
+										<BitDataItem BitOffset="6" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="7" TextId="T_DUMMY_BIT"/>
+									</DataItem>
+									<DataItem DataType="Unsigned8" UseAsBits="true" TextId="T_ID_1SDOUT">
+										<BitDataItem BitOffset="0" TextId="T_DO_CH0_RESET"/>
+										<BitDataItem BitOffset="1" TextId="T_DO_CH1_RESET"/>
+										<BitDataItem BitOffset="2" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="3" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="4" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="5" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="6" TextId="T_DUMMY_BIT"/>
+										<BitDataItem BitOffset="7" TextId="T_DUMMY_BIT"/>
+									</DataItem>
+									<DataItem DataType="F_MessageTrailer4Byte" TextId="T_ID_S_SafetyTrailer"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="28673" Length="15">
+									<Name TextId="T_ID_PROFILE_T100_3DIN1DOUT_IPAR"/>
+									<Const Data="0x03,0x01,0x07,0x00,0x00,0x00,0x07,0x00,0x00,0x00,0x07,0x00,0x00,0x00,0x03"/>
+									<Ref ValueItemTarget="V_ID_T100_ENABLE" ByteOffset="2" DataType="Bit" BitOffset="0" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_1_ENABLE"/>
+									<Ref ValueItemTarget="V_ID_T100_INOUT_CHANNEL_MODE" ByteOffset="2" DataType="Bit" BitOffset="1" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_1_CHANNEL_MODE"/>
+									<Ref ValueItemTarget="V_ID_T100_INTYPE" ByteOffset="2" DataType="Bit" BitOffset="2" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_1_TYPE"/>
+									<Ref ValueItemTarget="V_ID_T100_IN_RES_TYPE" ByteOffset="2" DataType="Bit" BitOffset="3" DefaultValue="0" TextId="T_ID_T100_3DIN1DOUT_IN_1_RES_TYPE"/>
+									<Ref ValueItemTarget="V_ID_T100_IN_TEST_OUT" DataType="BitArea" ByteOffset="2" BitOffset="4" BitLength="3" DefaultValue="0" AllowedValues="0..7" Changeable="true" Visible="true" TextId="T_ID_T100_3DIN1DOUT_IN_1_TEST_OUT"/>
+									<Ref DataType="Unsigned8" ByteOffset="3" DefaultValue="0" AllowedValues="0..255" TextId="T_ID_T100_3DIN1DOUT_IN_1_CONS_DEBOUNCE"/>
+									<Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_T100_3DIN1DOUT_IN_1_CONS_FILTER"/>
+									<Ref ValueItemTarget="V_ID_T100_ENABLE" ByteOffset="6" DataType="Bit" BitOffset="0" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_2_ENABLE"/>
+									<Ref ValueItemTarget="V_ID_T100_INOUT_CHANNEL_MODE" ByteOffset="6" DataType="Bit" BitOffset="1" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_2_CHANNEL_MODE"/>
+									<Ref ValueItemTarget="V_ID_T100_INTYPE" ByteOffset="6" DataType="Bit" BitOffset="2" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_2_TYPE"/>
+									<Ref ValueItemTarget="V_ID_T100_IN_RES_TYPE" ByteOffset="6" DataType="Bit" BitOffset="3" DefaultValue="0" TextId="T_ID_T100_3DIN1DOUT_IN_2_RES_TYPE"/>
+									<Ref ValueItemTarget="V_ID_T100_IN_TEST_OUT" DataType="BitArea" ByteOffset="6" BitOffset="4" BitLength="3" DefaultValue="0" AllowedValues="0..7" Changeable="true" Visible="true" TextId="T_ID_T100_3DIN1DOUT_IN_2_TEST_OUT"/>
+									<Ref DataType="Unsigned8" ByteOffset="7" DefaultValue="0" AllowedValues="0..255" TextId="T_ID_T100_3DIN1DOUT_IN_2_CONS_DEBOUNCE"/>
+									<Ref DataType="Unsigned16" ByteOffset="8" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_T100_3DIN1DOUT_IN_2_CONS_FILTER"/>
+									<Ref ValueItemTarget="V_ID_T100_ENABLE" ByteOffset="10" DataType="Bit" BitOffset="0" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_3_ENABLE"/>
+									<Ref ValueItemTarget="V_ID_T100_INOUT_CHANNEL_MODE" ByteOffset="10" DataType="Bit" BitOffset="1" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_3_CHANNEL_MODE"/>
+									<Ref ValueItemTarget="V_ID_T100_INTYPE" ByteOffset="10" DataType="Bit" BitOffset="2" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_IN_3_TYPE"/>
+									<Ref ValueItemTarget="V_ID_T100_IN_RES_TYPE" ByteOffset="10" DataType="Bit" BitOffset="3" DefaultValue="0" TextId="T_ID_T100_3DIN1DOUT_IN_3_RES_TYPE"/>
+									<Ref ValueItemTarget="V_ID_T100_IN_TEST_OUT" DataType="BitArea" ByteOffset="10" BitOffset="4" BitLength="3" DefaultValue="0" AllowedValues="0..7" Changeable="true" Visible="true" TextId="T_ID_T100_3DIN1DOUT_IN_3_TEST_OUT"/>
+									<Ref DataType="Unsigned8" ByteOffset="11" DefaultValue="0" AllowedValues="0..255" TextId="T_ID_T100_3DIN1DOUT_IN_3_CONS_DEBOUNCE"/>
+									<Ref DataType="Unsigned16" ByteOffset="12" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_T100_3DIN1DOUT_IN_3_CONS_FILTER"/>
+									<Ref ValueItemTarget="V_ID_T100_ENABLE" ByteOffset="14" DataType="Bit" BitOffset="0" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_OUT_1_ENABLE"/>
+									<Ref ValueItemTarget="V_ID_T100_INOUT_CHANNEL_MODE" ByteOffset="14" DataType="Bit" BitOffset="1" DefaultValue="1" TextId="T_ID_T100_3DIN1DOUT_OUT_1_CHANNEL_MODE"/>
+									<Ref ValueItemTarget="V_ID_T100_IN_RES_TYPE" ByteOffset="14" DataType="Bit" BitOffset="2" DefaultValue="0" TextId="T_ID_T100_3DIN1DOUT_OUT_1_RES_TYPE"/>
+									<Ref ValueItemTarget="V_ID_T100_OUT_TEST_OUT_OFFSET" DataType="BitArea" ByteOffset="14" BitOffset="4" BitLength="4" DefaultValue="0" AllowedValues="0..10" Changeable="true" Visible="true" TextId="T_ID_T100_3DIN1DOUT_OUT_1_TEST_OUT_OFFSET"/>
+								</ParameterRecordDataItem>
+								<F_ParameterRecordDataItem Index="28672" F_ParamDescCRC="59655">
+									<F_Check_iPar DefaultValue="NoCheck" Visible="false" Changeable="false"/>
+									<F_SIL DefaultValue="SIL2" AllowedValues="SIL2 SIL3" Visible="true" Changeable="true"/>
+									<F_CRC_Length DefaultValue="3-Byte-CRC" Visible="true"/>
+									<F_Block_ID DefaultValue="1" AllowedValues="1" Changeable="false"/>
+									<F_Par_Version/>
+									<F_Source_Add AllowedValues="1..65534"/>
+									<F_Dest_Add AllowedValues="1..65534"/>
+									<F_WD_Time DefaultValue="150" AllowedValues="20..10000"/>
+									<F_Par_CRC DefaultValue="25685"/>
+									<F_iPar_CRC DefaultValue="66651370"/>
+								</F_ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_T100_3DIN1DOUT"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_T100_3DIN1DOUT"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+			</ModuleList>
+
+<!-- List of values -->
+			<ValueList>
+				<ValueItem ID="V_ID_T100_ENABLE">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_T100_Disable"/>
+						<Assign Content="1" TextId="T_ID_T100_Enable"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="V_ID_T100_INOUT_CHANNEL_MODE">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_T100_IO_SINGLE"/>
+						<Assign Content="1" TextId="T_ID_T100_IO_DUAL"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="V_ID_T100_INTYPE">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_T100_IN_DIS"/>
+						<Assign Content="1" TextId="T_ID_T100_IN_DIC"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="V_ID_T100_IN_RES_TYPE">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_T100_IN_RES_MAN"/>
+						<Assign Content="1" TextId="T_ID_T100_IN_RES_AUTO"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="V_ID_T100_IN_TEST_OUT">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_T100_IN_TEST_OUT_400us"/>
+						<Assign Content="1" TextId="T_ID_T100_IN_TEST_OUT_800us"/>
+						<Assign Content="2" TextId="T_ID_T100_IN_TEST_OUT_1200us"/>
+						<Assign Content="3" TextId="T_ID_T100_IN_TEST_OUT_1600us"/>
+						<Assign Content="4" TextId="T_ID_T100_IN_TEST_OUT_2000us"/>
+						<Assign Content="5" TextId="T_ID_T100_IN_TEST_OUT_2400us"/>
+						<Assign Content="6" TextId="T_ID_T100_IN_TEST_OUT_OFF"/>
+						<Assign Content="7" TextId="T_ID_T100_IN_TEST_OUT_ON"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="V_ID_T100_OUT_TEST_OUT_OFFSET">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_NO"/>
+						<Assign Content="1" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_400US"/>
+						<Assign Content="2" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_800US"/>
+						<Assign Content="3" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_1200US"/>
+						<Assign Content="4" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_1600US"/>
+						<Assign Content="5" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_2000US"/>
+						<Assign Content="6" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_2400US"/>
+						<Assign Content="7" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_2800US"/>
+						<Assign Content="8" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_3200US"/>
+						<Assign Content="9" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_3600US"/>
+						<Assign Content="10" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_4000US"/>
+ 						<Assign Content="11" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_4400US"/>
+ 						<Assign Content="12" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_4800US"/>
+ 						<Assign Content="13" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_5200US"/>
+ 						<Assign Content="14" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_5600US"/>
+ 						<Assign Content="15" TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_6000US"/>
+					</Assignments>
+				</ValueItem>
+			</ValueList>
+<!-- List of diag -->
+			<ChannelDiagList>
+				<ChannelDiagItem ErrorType="64">
+					<Name TextId="T_ID_DIAG_F_ADDR_MISMATCH"/>
+					<Help TextId="T_ID_DIAG_HELP_F_ADDR_MISMATCH"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="65">
+					<Name TextId="T_ID_DIAG_INVALID_DST_F_ADDR"/>
+					<Help TextId="T_ID_DIAG_HELP_INVALID_DST_F_ADDR"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="66">
+					<Name TextId="T_ID_DIAG_INVALID_SRC_F_ADDR"/>
+					<Help TextId="T_ID_DIAG_HELP_INVALID_SRC_F_ADDR"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="67">
+					<Name TextId="T_ID_DIAG_F_WD_ZERO"/>
+					<Help TextId="T_ID_DIAG_HELP_F_WD_ZERO"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="71">
+					<Name TextId="T_ID_DIAG_CRC_1_FAULT"/>
+					<Help TextId="T_ID_DIAG_HELP_CRC_1_FAULT"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="72">
+					<Name TextId="T_ID_DIAG_SPEC"/>
+					<Help TextId="T_ID_DIAG_HELP_SPEC"/>
+					<ExtChannelDiagList>
+						<ExtChannelDiagItem ErrorType="1">
+							<Name TextId="T_ID_EXTDIAG_HARD_FAILURE"/>
+							<Help TextId="T_ID_EXTDIAG_HELP_HARD_FAILURE"/>
+							<ExtChannelAddValue>
+								<DataItem Id="1" DataType="Unsigned16"/>
+								<DataItem Id="2" DataType="Unsigned16"/>
+							</ExtChannelAddValue>
+						</ExtChannelDiagItem>
+					</ExtChannelDiagList>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="75">
+					<Name TextId="T_ID_DIAG_IPAR_CRC_ERR"/>
+					<Help TextId="T_ID_DIAG_HELP_IPAR_CRC_ERR"/>
+				</ChannelDiagItem>
+			</ChannelDiagList>
+<!-- List of graphics -->
+			<GraphicsList>
+				<GraphicItem ID="1" GraphicFile="GSDML-010C-0009-ABCC-PRT2P" />
+			</GraphicsList>
+<!-- List of categories -->
+			<CategoryList>
+				<CategoryItem ID="CAT_REF_MODULES" TextId="T_ID_CAT_REF_MODULES" />
+				<CategoryItem ID="CAT_REF_MIGRATION_DAP" TextId="T_ID_MIGRATION_DAP" />
+				<CategoryItem ID="CAT_REF_FUNCTIONAL_SAFETY" TextId="T_ID_FUNCTIONAL_SAFETY"/>
+			</CategoryList>
+
+<!-- List of texts -->
+			<ExternalTextList>
+				<PrimaryLanguage>
+					<!--Device Access Point information etc -->
+					<Text TextId="T_ID_DEV_DESCRIPTION" Value="Anybus CompactCom PROFINET IO 2-Port" />
+					<Text TextId="T_ID_V1_DEV_DESCRIPTION" Value="This Device Access Point may be used by IO Controllers that do not support extended PROFINET diagnostics. RT communication is supported" />
+					<Text TextId="T_ID_V15_DEV_DESCRIPTION" Value="This Device Access Point may be used by IO Controllers that do not support extended PROFINET diagnostics. RT communication is supported" />
+					<Text TextId="T_ID_V2_DEV_DESCRIPTION" Value="This Device Access Point supports RT communication" />
+					<Text TextId="T_ID_DAP_V1" Value="RT" />
+					<Text TextId="T_ID_DAP_V15" Value="RT (FW&gt;=1.13)" />
+					<Text TextId="T_ID_DAP_V2" Value="RT" />
+					<Text TextId="T_ID_SS_INTERFACE" Value="X1" />
+					<Text TextId="T_ID_SS_PORT1" Value="P1" />
+					<Text TextId="T_ID_SS_PORT2" Value="P2" />
+					<Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface" />
+					<Text TextId="T_ID_PORT" Value="Port 1" />
+					<Text TextId="T_ID_PORT2" Value="Port 2" />
+
+					<!--Module category-->
+					<Text TextId="T_ID_CAT_REF_MODULES" Value="Input/Output" />
+					<Text TextId="T_ID_MIGRATION_DAP" Value="Migration" />
+					<Text TextId="T_ID_FUNCTIONAL_SAFETY" Value="Functional Safety"/>
+
+					<!-- Vendor module texts -->
+					<Text TextId="T_ID_INPUT" Value="Input" />
+					<Text TextId="T_ID_OUTPUT" Value="Output" />
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT1B" Value="Output 1 byte" />
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT1B" Value="Output 1 byte" />
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT1B" Value="Output 1 byte" />
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT1B" Value="Output 1 byte" />
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT1W" Value="Output 1 word" />
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT1W" Value="Output 1 word" />
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT1W" Value="Output 1 word" />
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT1W" Value="Output 1 word" />
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT2W" Value="Output 2 word" />
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT2W" Value="Output 2 word" />
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT2W" Value="Output 2 word" />
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT2W" Value="Output 2 word" />
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT4W" Value="Output 4 word" />
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT4W" Value="Output 4 word" />
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT4W" Value="Output 4 word" />
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT4W" Value="Output 4 word" />
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT1B" Value="Input 1 byte" />
+					<Text TextId="T_ID_INFO_TEXT_INPUT1B" Value="Input 1 byte" />
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT1B" Value="Input 1 byte" />
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT1B" Value="Input 1 byte" />
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT1W" Value="Input 1 word" />
+					<Text TextId="T_ID_INFO_TEXT_INPUT1W" Value="Input 1 word" />
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT1W" Value="Input 1 word" />
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT1W" Value="Input 1 word" />
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT2W" Value="Input 2 word" />
+					<Text TextId="T_ID_INFO_TEXT_INPUT2W" Value="Input 2 word" />
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT2W" Value="Input 2 word" />
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT2W" Value="Input 2 word" />
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT4W" Value="Input 4 word" />
+					<Text TextId="T_ID_INFO_TEXT_INPUT4W" Value="Input 4 word" />
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT4W" Value="Input 4 word" />
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT4W" Value="Input 4 word" />
+
+					<!-- PROFIsafe -->
+					<Text TextId="T_ID_MODULE_NAME_T100_3DIN1DOUT" Value="3 Dual Input/1 Dual Output"/>
+					<Text TextId="T_ID_MODULE_INFO_T100_3DIN1DOUT" Value="3 Dual Input/1 Dual Output"/>
+					<Text TextId="T_ID_SUBMOD_NAME_T100_3DIN1DOUT" Value="3 Dual Input/1 Dual Output"/>
+					<Text TextId="T_ID_SUBMOD_INFO_T100_3DIN1DOUT" Value="3 Dual Input/1 Dual Output"/>
+					<Text TextId="T_ID_S_SafetyTrailer" Value="Safety"/>
+					<Text TextId="T_ID_1SDIN" Value="Safety In"/>
+					<Text TextId="T_ID_1SDOUT" Value="Safety Out"/>
+					<Text TextId="T_ID_PROFILE_T100_3DIN1DOUT_IPAR" Value="IXXAT Safe T100 Safety Module, 3 Dual Inputs and 1 Dual Output"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_1_ENABLE" Value="CH1/2: Input Enabled"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_1_CHANNEL_MODE" Value="CH1/2: Input Channel Mode"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_1_TYPE" Value="CH1/2: Input Type"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_1_RES_TYPE" Value="CH1/2: Input Reset Type"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_1_TEST_OUT" Value="CH1/2: Input Test Output Signal"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_1_CONS_DEBOUNCE" Value="CH1/2: Input Debounce Filter Time (400us steps)"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_1_CONS_FILTER" Value="CH1/2: Input Consistency Filter Time (400us steps)"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_2_ENABLE" Value="CH3/4: Input Enabled"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_2_CHANNEL_MODE" Value="CH3/4: Input Channel Mode"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_2_TYPE" Value="CH3/4: Input Type"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_2_RES_TYPE" Value="CH3/4: Input Reset Type"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_2_TEST_OUT" Value="CH3/4: Input Test Output Signal"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_2_CONS_DEBOUNCE" Value="CH3/4: Input Debounce Filter Time (400us steps)"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_2_CONS_FILTER" Value="CH3/4: Input Consistency Filter Time (400us steps)"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_3_ENABLE" Value="CH5/6: Input Enabled"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_3_CHANNEL_MODE" Value="CH5/6: Input Channel Mode"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_3_TYPE" Value="CH5/6: Input Type"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_3_RES_TYPE" Value="CH5/6: Input Reset Type"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_3_TEST_OUT" Value="CH5/6: Input Test Output Signal"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_3_CONS_DEBOUNCE" Value="CH5/6: Input Debounce Filter Time (400us steps)"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_IN_3_CONS_FILTER" Value="CH5/6: Input Consistency Filter Time (400us steps)"/>
+					<Text TextId="T_ID_T100_Disable" Value="Disable"/>
+					<Text TextId="T_ID_T100_Enable" Value="Enable"/>
+					<Text TextId="T_ID_T100_IO_SINGLE" Value="Single Channel"/>
+					<Text TextId="T_ID_T100_IO_DUAL" Value="Dual Channel"/>
+					<Text TextId="T_ID_T100_IN_DIS" Value="DIS"/>
+					<Text TextId="T_ID_T100_IN_DIC" Value="DIC"/>
+					<Text TextId="T_ID_T100_IN_RES_MAN" Value="Manual"/>
+					<Text TextId="T_ID_T100_IN_RES_AUTO" Value="Automatic"/>
+					<Text TextId="T_ID_T100_IN_TEST_OUT_400us" Value="400us"/>
+					<Text TextId="T_ID_T100_IN_TEST_OUT_800us" Value="800us"/>
+					<Text TextId="T_ID_T100_IN_TEST_OUT_1200us" Value="1200us"/>
+					<Text TextId="T_ID_T100_IN_TEST_OUT_1600us" Value="1600us"/>
+					<Text TextId="T_ID_T100_IN_TEST_OUT_2000us" Value="2000us"/>
+					<Text TextId="T_ID_T100_IN_TEST_OUT_2400us" Value="2400us"/>
+					<Text TextId="T_ID_T100_IN_TEST_OUT_OFF" Value="Always Off"/>
+					<Text TextId="T_ID_T100_IN_TEST_OUT_ON" Value="Always On"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_OUT_1_ENABLE" Value="CH1/2: Output Enabled"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_OUT_1_CHANNEL_MODE" Value="CH1/2: Output Channel Mode"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_OUT_1_RES_TYPE" Value="CH1/2: Output Reset Type"/>
+					<Text TextId="T_ID_T100_3DIN1DOUT_OUT_1_TEST_OUT_OFFSET" Value="CH1/2: Output Test Offset (extension)"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_NO" Value="No Offset"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_400US" Value="400us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_800US" Value="800us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_1200US" Value="1200us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_1600US" Value="1600us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_2000US" Value="2000us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_2400US" Value="2400us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_2800US" Value="2800us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_3200US" Value="3200us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_3600US" Value="3600us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_4000US" Value="4000us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_4400US" Value="4400us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_4800US" Value="4800us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_5200US" Value="5200us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_5600US" Value="5600us extension"/>
+					<Text TextId="T_ID_T100_OUT_TEST_OUT_OFFSET_6000US" Value="6000us extension"/>
+					<Text TextId="T_DI_CH0" Value="Safe input Ch0"/>
+					<Text TextId="T_DI_CH1" Value="Safe input Ch1"/>
+					<Text TextId="T_DI_CH2" Value="Safe input Ch2"/>
+					<Text TextId="T_DI_CH3" Value="Safe input Ch3"/>
+					<Text TextId="T_DI_CH4" Value="Safe input Ch4"/>
+					<Text TextId="T_DI_CH5" Value="Safe input Ch5"/>
+					<Text TextId="T_DO_CH0" Value="Safe output Ch0"/>
+					<Text TextId="T_DO_CH1" Value="Safe output Ch1"/>
+					<Text TextId="T_DI_CH0_RESET" Value="Reset safe input Ch0"/>
+					<Text TextId="T_DI_CH1_RESET" Value="Reset safe input Ch1"/>
+					<Text TextId="T_DI_CH2_RESET" Value="Reset safe input Ch2"/>
+					<Text TextId="T_DI_CH3_RESET" Value="Reset safe input Ch3"/>
+					<Text TextId="T_DI_CH4_RESET" Value="Reset safe input Ch4"/>
+					<Text TextId="T_DI_CH5_RESET" Value="Reset safe input Ch5"/>
+					<Text TextId="T_DO_CH0_RESET" Value="Reset safe output Ch0"/>
+					<Text TextId="T_DO_CH1_RESET" Value="Reset safe output Ch1"/>
+					<Text TextId="T_QDI_CH0" Value="Q safe input Ch0"/>
+					<Text TextId="T_QDI_CH1" Value="Q safe input Ch1"/>
+					<Text TextId="T_QDI_CH2" Value="Q safe input Ch2"/>
+					<Text TextId="T_QDI_CH3" Value="Q safe input Ch3"/>
+					<Text TextId="T_QDI_CH4" Value="Q safe input Ch4"/>
+					<Text TextId="T_QDI_CH5" Value="Q safe input Ch5"/>
+					<Text TextId="T_QDO_CH0" Value="Q safe output Ch0"/>
+					<Text TextId="T_QDO_CH1" Value="Q safe output Ch1"/>
+					<Text TextId="T_DUMMY_BIT" Value="Unused"/>
+					<Text TextId="T_ID_DIAG_F_ADDR_MISMATCH" Value="Mismatch of safety destination address"/>
+					<Text TextId="T_ID_DIAG_HELP_F_ADDR_MISMATCH" Value="Please check the F address setting of the Safe T100/PS device."/>
+					<Text TextId="T_ID_DIAG_INVALID_DST_F_ADDR" Value="Safety destination address not valid"/>
+					<Text TextId="T_ID_DIAG_HELP_INVALID_DST_F_ADDR" Value="Please check the destination F address setting in your configuration."/>
+					<Text TextId="T_ID_DIAG_INVALID_SRC_F_ADDR" Value="Safety source address not valid"/>
+					<Text TextId="T_ID_DIAG_HELP_INVALID_SRC_F_ADDR" Value="Please check the source F address setting in your configuration."/>
+					<Text TextId="T_ID_DIAG_F_WD_ZERO" Value="Safety watchdog timeout value is 0ms"/>
+					<Text TextId="T_ID_DIAG_HELP_F_WD_ZERO" Value="Please change the safety watchdog timeout value to a valid setting."/>
+					<Text TextId="T_ID_DIAG_CRC_1_FAULT" Value="CRC1 fault"/>
+					<Text TextId="T_ID_DIAG_HELP_CRC_1_FAULT" Value="Please check your F-parameter and iParameter settings."/>
+					<Text TextId="T_ID_DIAG_SPEC" Value="Device specific error"/>
+					<Text TextId="T_ID_DIAG_HELP_SPEC" Value="Please see extended error code for details."/>
+					<Text TextId="T_ID_EXTDIAG_HARD_FAILURE" Value="Hard failure"/>
+					<Text TextId="T_ID_EXTDIAG_HELP_HARD_FAILURE" Value="A hard failure occurred, please refer to the manual (error code 0x{2:x})."/>
+					<Text TextId="T_ID_DIAG_IPAR_CRC_ERR" Value="Inconsistent iParameters (iParCRC error)"/>
+					<Text TextId="T_ID_DIAG_HELP_IPAR_CRC_ERR" Value="Please verify that your iParameter settings are valid and that the correct iParameter CRC is entered into the corresponding F parameter."/>
+				</PrimaryLanguage>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

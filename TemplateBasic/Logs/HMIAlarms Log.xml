@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='MassDataHandlerLogFile.xsl'?>
+<LogFile titleName="HMIAlarms Log.xml" projectName="C:\Users\zhanghuifeng\Desktop\HMIAlarms.xlsx" typeText="类型" messageText="消息" timeText="时间">
+  <LogEntry type="Information" dateTime="13:45:53">
+    <Message>完成导入： 2407 个离散量报警; 0 个模拟量报警</Message>
+  </LogEntry>
+</LogFile>

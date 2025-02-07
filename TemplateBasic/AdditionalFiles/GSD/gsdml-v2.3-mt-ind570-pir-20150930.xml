@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- ============================================================================================ -->
+<!--   ABCC40-PIR example GSD: ADI Based RI method                                                -->
+<!-- ============================================================================================ -->
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-v2.3.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x029B" DeviceID="0x0EDA">
+      <InfoText TextId="T_ID_DEV_DESCRIPTION"/>
+      <VendorName Value="METTLER TOLEDO"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="General" ProductFamily="IND570 ProfiNet"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+<!-- ============================================================================================ -->
+<!--   List of Device Access Points (DAP)                                                         -->
+<!-- ============================================================================================ -->
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP" PhysicalSlots="0..2" ModuleIdentNumber="0x00000011" MinDeviceInterval="8" ImplementationType="NP40" DNS_CompatibleName="IND570"
+          ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" MultipleWriteSupported="false" NameOfStationNotTransferable="true"
+          ParameterizationSpeedupSupported="true" ResetToFactoryModes="1 2 8" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2">
+          <ModuleInfo>
+            <Name TextId="T_ID_DAP"/>
+            <InfoText TextId="T_ID_DAP_DESCRIPTION"/>
+            <VendorName Value="METTLER TOLEDO"/>
+            <OrderNumber Value="ABCC40-PIR"/>
+            <HardwareRelease Value="V1.0"/>
+            <SoftwareRelease Value="V1.00"/>
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+            <SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+            <SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1440" MaxOutputLength="1440"/>
+          <UseableModules>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI103" AllowedInSlots="1..1"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI104" AllowedInSlots="2..2"/>	
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI105" AllowedInSlots="1..1"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI115" AllowedInSlots="2..2"/>		
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI113" AllowedInSlots="1..1"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI114" AllowedInSlots="2..2"/>	
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI101" AllowedInSlots="1..1"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI102" AllowedInSlots="2..2"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI116" AllowedInSlots="1..1"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI117" AllowedInSlots="2..2"/>		
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI118" AllowedInSlots="1..1"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI119" AllowedInSlots="2..2"/>	
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI120" AllowedInSlots="1..1"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI121" AllowedInSlots="2..2"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI128" AllowedInSlots="1..1"/>
+				<ModuleItemRef ModuleItemTarget="ID_MODULE_ADI129" AllowedInSlots="2..2"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1"/>
+              <ModuleInfo>
+                 <Name TextId="T_ID_DAP"/>
+                 <InfoText TextId="T_ID_DAP_DESCRIPTION"/>
+               </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0x00000002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_INTERFACE" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" DCP_HelloSupported="false" DelayMeasurementSupported="true">
+     <!--         <RT_Class3Properties ForwardingMode="Relative" MaxNumberIR_FrameData="128" MaxBridgeDelay="3100"/>                                   MOW Removed IRT functionality since this is a PROFINET IO device only 
+             <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP"/>  -->
+              <ApplicationRelations>
+                <TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+                <RT_Class3TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16"/>
+              </ApplicationRelations>
+              <MediaRedundancy  SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="Port 1" SubslotNumber="32769" SubmoduleIdentNumber="0x00000003" MAUTypes="16" TextId="T_ID_PORT1" MaxPortRxDelay="209" MaxPortTxDelay="90" SupportsRingportConfig="true" IsDefaultRingport="true"/>
+            <PortSubmoduleItem ID="Port 2" SubslotNumber="32770" SubmoduleIdentNumber="0x00000004" MAUTypes="16" TextId="T_ID_PORT2" MaxPortRxDelay="209" MaxPortTxDelay="90" SupportsRingportConfig="true" IsDefaultRingport="true"/>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+       </DeviceAccessPointList>
+
+<!-- ============================================================================================ -->
+<!--   List of modules                                                                            -->
+<!-- ============================================================================================ -->
+      <ModuleList>        
+        <!-- ADI 105, data type = UINT32, direction = input -->
+        <ModuleItem ID="ID_MODULE_ADI105" ModuleIdentNumber="0x00000069">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI105"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI105_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI105"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 115, data type = UINT32, direction = output -->
+        <ModuleItem ID="ID_MODULE_ADI115" ModuleIdentNumber="0x00000073">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI115"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI115_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI115"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 114, data type = UINT32, direction = output -->
+        <ModuleItem ID="ID_MODULE_ADI114" ModuleIdentNumber="0x00000072">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI114"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI114_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI114"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 103, data type = UINT32, direction = input -->
+        <ModuleItem ID="ID_MODULE_ADI103" ModuleIdentNumber="0x00000067">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI103"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI103_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI103"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 113, data type = UINT32, direction = input -->
+        <ModuleItem ID="ID_MODULE_ADI113" ModuleIdentNumber="0x00000070">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI113"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI113_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI113"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 104, data type = UINT32, direction = output -->
+        <ModuleItem ID="ID_MODULE_ADI104" ModuleIdentNumber="0x00000068">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI104"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI104_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI104"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 101, data type = UINT32, direction = input -->
+        <ModuleItem ID="ID_MODULE_ADI101" ModuleIdentNumber="0x00000065">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI101"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI101_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI101"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 102, data type = UINT32, direction = output -->
+        <ModuleItem ID="ID_MODULE_ADI102" ModuleIdentNumber="0x00000066">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI102"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI102_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI102"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 116, data type = UINT64, direction = input -->
+        <ModuleItem ID="ID_MODULE_ADI116" ModuleIdentNumber="0x00000074">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI116"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI116_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI116"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 117, data type = UINT64, direction = output -->
+        <ModuleItem ID="ID_MODULE_ADI117" ModuleIdentNumber="0x00000075">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI117"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI117_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI117"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 118, data type = UINT64, direction = input -->
+        <ModuleItem ID="ID_MODULE_ADI118" ModuleIdentNumber="0x00000076">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI118"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI118_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI118"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 119, data type = UINT64, direction = output -->
+        <ModuleItem ID="ID_MODULE_ADI119" ModuleIdentNumber="0x00000077">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI119"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI119_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI119"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 120, data type = UINT64, direction = input -->
+        <ModuleItem ID="ID_MODULE_ADI120" ModuleIdentNumber="0x00000078">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI120"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI120_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI120"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 121, data type = UINT64, direction = output -->
+        <ModuleItem ID="ID_MODULE_ADI121" ModuleIdentNumber="0x00000079">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI121"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI121_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI121"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 128, data type = UINT64, direction = input -->
+        <ModuleItem ID="ID_MODULE_ADI128" ModuleIdentNumber="0x00000080">
+          <ModuleInfo CategoryRef="CAT_REF_IN_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI128"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI128_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                  <DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI128"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- ADI 129, data type = UINT64, direction = output -->
+        <ModuleItem ID="ID_MODULE_ADI129" ModuleIdentNumber="0x00000081">
+          <ModuleInfo CategoryRef="CAT_REF_OUT_MODULES">
+            <Name TextId="T_ID_MODULE_NAME_ADI129"/>
+            <InfoText TextId="T_ID_INFO_TEXT_ADI"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_ADI129_GROUP1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                  <DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_ID_MODULE_NAME_ADI129"/>
+                <InfoText TextId="T_ID_SUBMOD_INFO_ELEMENT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile="GSDML-029B-0EDA-IND570"/>
+      </GraphicsList>
+
+<!-- ============================================================================================ -->
+<!--   List of categorys                                                                          -->
+<!-- ============================================================================================ -->
+
+      <CategoryList>
+        <CategoryItem ID="CAT_REF_IN_MODULES" TextId="T_ID_CAT_REF_IN_MODULES"/>
+        <CategoryItem ID="CAT_REF_OUT_MODULES" TextId="T_ID_CAT_REF_OUT_MODULES"/>
+      </CategoryList>
+
+<!-- ============================================================================================ -->
+<!--   ExternalTextList                                                                           -->
+<!-- ============================================================================================ -->
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!--Identification-->
+          <Text TextId="T_ID_DAP" Value="RT Standard"/>
+          <Text TextId="T_ID_DEV_DESCRIPTION" Value="Mettler Toledo Terminal"/>
+          <Text TextId="T_ID_DAP_DESCRIPTION" Value="Supports RT communications"/>
+          <Text TextId="T_ID_SS_INTERFACE" Value="X1"/>
+          <Text TextId="T_ID_SS_PORT1" Value="P1"/>
+          <Text TextId="T_ID_SS_PORT2" Value="P2"/>
+          <Text TextId="T_ID_INTERFACE" Value="Interface"/>
+          <Text TextId="T_ID_PORT1" Value="Port 1"/>
+          <Text TextId="T_ID_PORT2" Value="Port 2"/>
+
+          <!--Vendor module category-->
+          <Text TextId="T_ID_CAT_REF_IN_MODULES" Value="Input"/>
+          <Text TextId="T_ID_CAT_REF_OUT_MODULES" Value="Output"/>
+
+          <!-- Vendor module texts -->
+          <Text TextId="T_ID_INPUT" Value="Input"/>
+          <Text TextId="T_ID_OUTPUT" Value="Output"/>
+
+          <Text TextId="T_ID_INFO_TEXT_ADI" Value="ADI number"/>
+          <Text TextId="T_ID_SUBMOD_INFO_ELEMENT" Value="ADI element"/>
+          <Text TextId="T_ID_SUBMOD_INFO_ELEMENT_GROUP" Value="ADI element group"/>
+
+          <Text TextId="T_ID_DATAITEM_ADI101_ELEMENT1" Value="ADI #101, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI102_ELEMENT1" Value="ADI #102, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI105_ELEMENT1" Value="ADI #105, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI115_ELEMENT1" Value="ADI #115, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI103_ELEMENT1" Value="ADI #103, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI114_ELEMENT1" Value="ADI #114, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI104_ELEMENT1" Value="ADI #104, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI113_ELEMENT1" Value="ADI #113, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI116_ELEMENT1" Value="ADI #116, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI117_ELEMENT1" Value="ADI #117, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI118_ELEMENT1" Value="ADI #118, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI119_ELEMENT1" Value="ADI #119, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI120_ELEMENT1" Value="ADI #120, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI121_ELEMENT1" Value="ADI #121, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI128_ELEMENT1" Value="ADI #128, Element #1"/>
+          <Text TextId="T_ID_DATAITEM_ADI129_ELEMENT1" Value="ADI #129, Element #1"/>
+          
+
+
+          
+          <Text TextId="T_ID_MODULE_NAME_ADI105" Value="INTEGER/DIVSION 1 slot"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI115" Value="INTEGER/DIVSION 1 slot"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI103" Value="INTEGER/DIVSION 2 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI114" Value="INTEGER/DIVSION 2 slots"/>          
+          <Text TextId="T_ID_MODULE_NAME_ADI113" Value="INTEGER/DIVSION 3 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI104" Value="INTEGER/DIVSION 3 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI101" Value="INTEGER/DIVSION 4 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI102" Value="INTEGER/DIVSION 4 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI116" Value="FLOAT 1 slot"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI117" Value="FLOAT 1 slot"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI118" Value="FLOAT 2 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI119" Value="FLOAT 2 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI120" Value="FLOAT 3 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI121" Value="FLOAT 3 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI128" Value="FLOAT 4 slots"/>
+          <Text TextId="T_ID_MODULE_NAME_ADI129" Value="FLOAT 4 slots"/>
+
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

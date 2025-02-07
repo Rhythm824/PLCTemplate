@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.3.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x01B7" DeviceID="0x0003">
+      <InfoText TextId="txtid-00000000" />
+      <VendorName Value="FANUC" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="I/O" ProductFamily="R-30iB EF2" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="MI00000001" PhysicalSlots="0..16" ModuleIdentNumber="0x10100000" MinDeviceInterval="32" ImplementationType="QorIQ1020" DNS_CompatibleName="r30ib-iodevice" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true" MultipleWriteSupported="true" RequiredSchemaVersion="V2.2">
+          <ModuleInfo>
+            <Name TextId="txtid-00000001" />
+            <InfoText TextId="txtid-00000002" />
+            <VendorName Value="FANUC" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="txtid-00000003" />
+            <SubslotItem SubslotNumber="32769" TextId="txtid-00000004" />
+            <SubslotItem SubslotNumber="32770" TextId="txtid-00000005" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="256" MaxOutputLength="256" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="MI00000002" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000003" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000004" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000005" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000006" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000007" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000008" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000009" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000010" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000011" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000012" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000013" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000014" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000015" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000016" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000017" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000018" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000019" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000020" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000021" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000022" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000023" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000024" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000025" AllowedInSlots="1..16" />
+            <ModuleItemRef ModuleItemTarget="MI00000026" AllowedInSlots="1..1" />
+            <ModuleItemRef ModuleItemTarget="MI00000027" AllowedInSlots="1..1" />
+            <ModuleItemRef ModuleItemTarget="MI00000028" AllowedInSlots="1..1" />
+            <ModuleItemRef ModuleItemTarget="MI00000029" AllowedInSlots="1..1" />
+            <ModuleItemRef ModuleItemTarget="MI00000030" AllowedInSlots="1..1" />
+            <ModuleItemRef ModuleItemTarget="MI00000031" AllowedInSlots="1..1" />
+            <ModuleItemRef ModuleItemTarget="MI00000032" AllowedInSlots="1..1" />
+            <ModuleItemRef ModuleItemTarget="MI00000033" AllowedInSlots="1..1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000001" SubmoduleIdentNumber="0x10120000" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1" />
+              <ModuleInfo>
+                <Name TextId="txtid-00000000" />
+                <InfoText TextId="txtid-00000002" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="ISMI00000001" SupportedProtocols="LLDP;SNMP" SupportedMibs="MIB2" DCP_HelloSupported="false" Writeable_IM_Records="1 2 3 4" NetworkComponentDiagnosisSupported="false" SupportedRT_Classes="RT_CLASS_1" SubslotNumber="32768" TextId="txtid-00000000" SubmoduleIdentNumber="0x10150003">
+              <ApplicationRelations>
+                <TimingProperties SendClock="32" />
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client" MRPD_Supported="false" MRT_Supported="false" AdditionalProtocolsSupported="false" />
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="PSI00000001" SubslotNumber="32769" MAUType="100BASETXFD" MAUTypes="16" TextId="txtid-00000004" SubmoduleIdentNumber="0x10150001" SupportsRingportConfig="false" IsDefaultRingport="true" />
+            <PortSubmoduleItem ID="PSI00000002" SubslotNumber="32770" MAUType="100BASETXFD" MAUTypes="16" TextId="txtid-00000005" SubmoduleIdentNumber="0x10150002" SupportsRingportConfig="false" IsDefaultRingport="true" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef GraphicItemTarget="grafId-00000000" Type="DeviceSymbol" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="MI00000002" ModuleIdentNumber="0x10600001">
+          <ModuleInfo CategoryRef="cate-00000000">
+            <Name TextId="txtid-00000006" />
+            <InfoText TextId="txtid-00000006" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000002" SubmoduleIdentNumber="0x10640001" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="1" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+                <Output>
+                  <DataItem DataType="OctetString" Length="1" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000001">
+                <Name TextId="txtid-00000006" />
+                <InfoText TextId="txtid-00000006" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000003" ModuleIdentNumber="0x10600002">
+          <ModuleInfo CategoryRef="cate-00000000">
+            <Name TextId="txtid-00000012" />
+            <InfoText TextId="txtid-00000012" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000003" SubmoduleIdentNumber="0x10640002" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="2" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+                <Output>
+                  <DataItem DataType="OctetString" Length="2" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000002">
+                <Name TextId="txtid-00000012" />
+                <InfoText TextId="txtid-00000012" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000004" ModuleIdentNumber="0x10600004">
+          <ModuleInfo CategoryRef="cate-00000000">
+            <Name TextId="txtid-00000014" />
+            <InfoText TextId="txtid-00000014" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000004" SubmoduleIdentNumber="0x10640004" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="4" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+                <Output>
+                  <DataItem DataType="OctetString" Length="4" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000003">
+                <Name TextId="txtid-00000014" />
+                <InfoText TextId="txtid-00000014" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000005" ModuleIdentNumber="0x10600008">
+          <ModuleInfo CategoryRef="cate-00000000">
+            <Name TextId="txtid-00000016" />
+            <InfoText TextId="txtid-00000016" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000005" SubmoduleIdentNumber="0x10640008" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="8" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+                <Output>
+                  <DataItem DataType="OctetString" Length="8" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000004">
+                <Name TextId="txtid-00000016" />
+                <InfoText TextId="txtid-00000016" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000006" ModuleIdentNumber="0x10600010">
+          <ModuleInfo CategoryRef="cate-00000000">
+            <Name TextId="txtid-00000018" />
+            <InfoText TextId="txtid-00000018" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000006" SubmoduleIdentNumber="0x10640010" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="16" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+                <Output>
+                  <DataItem DataType="OctetString" Length="16" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000005">
+                <Name TextId="txtid-00000018" />
+                <InfoText TextId="txtid-00000018" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000007" ModuleIdentNumber="0x10600020">
+          <ModuleInfo CategoryRef="cate-00000000">
+            <Name TextId="txtid-00000020" />
+            <InfoText TextId="txtid-00000020" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000007" SubmoduleIdentNumber="0x10640020" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="32" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+                <Output>
+                  <DataItem DataType="OctetString" Length="32" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000006">
+                <Name TextId="txtid-00000020" />
+                <InfoText TextId="txtid-00000020" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000008" ModuleIdentNumber="0x10600040">
+          <ModuleInfo CategoryRef="cate-00000000">
+            <Name TextId="txtid-00000022" />
+            <InfoText TextId="txtid-00000022" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000008" SubmoduleIdentNumber="0x10640040" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="64" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+                <Output>
+                  <DataItem DataType="OctetString" Length="64" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000007">
+                <Name TextId="txtid-00000022" />
+                <InfoText TextId="txtid-00000022" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000009" ModuleIdentNumber="0x10600080">
+          <ModuleInfo CategoryRef="cate-00000000">
+            <Name TextId="txtid-00000024" />
+            <InfoText TextId="txtid-00000024" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000009" SubmoduleIdentNumber="0x10640080" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="128" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+                <Output>
+                  <DataItem DataType="OctetString" Length="128" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000008">
+                <Name TextId="txtid-00000024" />
+                <InfoText TextId="txtid-00000024" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000010" ModuleIdentNumber="0x10200001">
+          <ModuleInfo CategoryRef="cate-00000009">
+            <Name TextId="txtid-00000026" />
+            <InfoText TextId="txtid-00000026" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000010" SubmoduleIdentNumber="0x10220001" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="1" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000010">
+                <Name TextId="txtid-00000026" />
+                <InfoText TextId="txtid-00000026" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000011" ModuleIdentNumber="0x10200002">
+          <ModuleInfo CategoryRef="cate-00000009">
+            <Name TextId="txtid-00000029" />
+            <InfoText TextId="txtid-00000029" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000011" SubmoduleIdentNumber="0x10220002" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="2" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000011">
+                <Name TextId="txtid-00000029" />
+                <InfoText TextId="txtid-00000029" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000012" ModuleIdentNumber="0x10200004">
+          <ModuleInfo CategoryRef="cate-00000009">
+            <Name TextId="txtid-00000031" />
+            <InfoText TextId="txtid-00000031" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000012" SubmoduleIdentNumber="0x10220004" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="4" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000012">
+                <Name TextId="txtid-00000031" />
+                <InfoText TextId="txtid-00000031" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000013" ModuleIdentNumber="0x10200008">
+          <ModuleInfo CategoryRef="cate-00000009">
+            <Name TextId="txtid-00000033" />
+            <InfoText TextId="txtid-00000033" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000013" SubmoduleIdentNumber="0x10220008" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="8" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000013">
+                <Name TextId="txtid-00000033" />
+                <InfoText TextId="txtid-00000033" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000014" ModuleIdentNumber="0x10200010">
+          <ModuleInfo CategoryRef="cate-00000009">
+            <Name TextId="txtid-00000035" />
+            <InfoText TextId="txtid-00000035" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000014" SubmoduleIdentNumber="0x10220010" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="16" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000014">
+                <Name TextId="txtid-00000035" />
+                <InfoText TextId="txtid-00000035" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000015" ModuleIdentNumber="0x10200020">
+          <ModuleInfo CategoryRef="cate-00000009">
+            <Name TextId="txtid-00000037" />
+            <InfoText TextId="txtid-00000037" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000015" SubmoduleIdentNumber="0x10220020" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="32" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000015">
+                <Name TextId="txtid-00000037" />
+                <InfoText TextId="txtid-00000037" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000016" ModuleIdentNumber="0x10200040">
+          <ModuleInfo CategoryRef="cate-00000009">
+            <Name TextId="txtid-00000039" />
+            <InfoText TextId="txtid-00000039" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000016" SubmoduleIdentNumber="0x10220040" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="64" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000016">
+                <Name TextId="txtid-00000039" />
+                <InfoText TextId="txtid-00000039" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000017" ModuleIdentNumber="0x10200080">
+          <ModuleInfo CategoryRef="cate-00000009">
+            <Name TextId="txtid-00000041" />
+            <InfoText TextId="txtid-00000041" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000017" SubmoduleIdentNumber="0x10220080" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input>
+                  <DataItem DataType="OctetString" Length="128" UseAsBits="true" TextId="txtid-00000010" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000017">
+                <Name TextId="txtid-00000041" />
+                <InfoText TextId="txtid-00000041" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000018" ModuleIdentNumber="0x10300001">
+          <ModuleInfo CategoryRef="cate-00000018">
+            <Name TextId="txtid-00000043" />
+            <InfoText TextId="txtid-00000043" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000018" SubmoduleIdentNumber="0x10330001" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output>
+                  <DataItem DataType="OctetString" Length="1" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000019">
+                <Name TextId="txtid-00000043" />
+                <InfoText TextId="txtid-00000043" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000019" ModuleIdentNumber="0x10300002">
+          <ModuleInfo CategoryRef="cate-00000018">
+            <Name TextId="txtid-00000045" />
+            <InfoText TextId="txtid-00000045" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000019" SubmoduleIdentNumber="0x10330002" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output>
+                  <DataItem DataType="OctetString" Length="2" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000020">
+                <Name TextId="txtid-00000045" />
+                <InfoText TextId="txtid-00000045" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000020" ModuleIdentNumber="0x10300004">
+          <ModuleInfo CategoryRef="cate-00000018">
+            <Name TextId="txtid-00000046" />
+            <InfoText TextId="txtid-00000046" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000020" SubmoduleIdentNumber="0x10330004" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output>
+                  <DataItem DataType="OctetString" Length="4" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000021">
+                <Name TextId="txtid-00000046" />
+                <InfoText TextId="txtid-00000046" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000021" ModuleIdentNumber="0x10300008">
+          <ModuleInfo CategoryRef="cate-00000018">
+            <Name TextId="txtid-00000047" />
+            <InfoText TextId="txtid-00000047" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000021" SubmoduleIdentNumber="0x10330008" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output>
+                  <DataItem DataType="OctetString" Length="8" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000022">
+                <Name TextId="txtid-00000047" />
+                <InfoText TextId="txtid-00000047" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000022" ModuleIdentNumber="0x10300010">
+          <ModuleInfo CategoryRef="cate-00000018">
+            <Name TextId="txtid-00000048" />
+            <InfoText TextId="txtid-00000048" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000022" SubmoduleIdentNumber="0x10330010" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output>
+                  <DataItem DataType="OctetString" Length="16" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000023">
+                <Name TextId="txtid-00000048" />
+                <InfoText TextId="txtid-00000048" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000023" ModuleIdentNumber="0x10300020">
+          <ModuleInfo CategoryRef="cate-00000018">
+            <Name TextId="txtid-00000049" />
+            <InfoText TextId="txtid-00000049" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000023" SubmoduleIdentNumber="0x10330020" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output>
+                  <DataItem DataType="OctetString" Length="32" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000024">
+                <Name TextId="txtid-00000049" />
+                <InfoText TextId="txtid-00000049" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000024" ModuleIdentNumber="0x10300040">
+          <ModuleInfo CategoryRef="cate-00000018">
+            <Name TextId="txtid-00000050" />
+            <InfoText TextId="txtid-00000050" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000024" SubmoduleIdentNumber="0x10330040" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output>
+                  <DataItem DataType="OctetString" Length="64" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000025">
+                <Name TextId="txtid-00000050" />
+                <InfoText TextId="txtid-00000050" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000025" ModuleIdentNumber="0x10300080">
+          <ModuleInfo CategoryRef="cate-00000018">
+            <Name TextId="txtid-00000051" />
+            <InfoText TextId="txtid-00000051" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000025" SubmoduleIdentNumber="0x10330080" API="0">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output>
+                  <DataItem DataType="OctetString" Length="128" UseAsBits="true" TextId="txtid-00000011" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="cate-00000026">
+                <Name TextId="txtid-00000051" />
+                <InfoText TextId="txtid-00000051" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000026" ModuleIdentNumber="0x10A00505">
+          <ModuleInfo CategoryRef="cate-00000027">
+            <Name TextId="txtid-00000052" />
+            <InfoText TextId="txtid-00000052" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000026" SubmoduleIdentNumber="0x10A40505" API="0" PROFIsafeSupported="true" Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescCRC="55196">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000057" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000055" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="44802">
+                  <F_Check_iPar DefaultValue="NoCheck" AllowedValues="NoCheck" Changeable="false" Visible="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Changeable="true" Visible="true" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" AllowedValues="3-Byte-CRC" Changeable="false" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0..7" Changeable="false" Visible="true" />
+                  <F_Par_Version DefaultValue="1" AllowedValues="1" Changeable="false" Visible="true" />
+                  <F_Source_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_Dest_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_WD_Time DefaultValue="150" AllowedValues="40..10000" Changeable="true" Visible="true" />
+                  <F_Par_CRC DefaultValue="48021" AllowedValues="0..65535" Changeable="true" Visible="true" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo CategoryRef="cate-00000027">
+                <Name TextId="txtid-00000052" />
+                <InfoText TextId="txtid-00000052" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000027" ModuleIdentNumber="0x10A00606">
+          <ModuleInfo CategoryRef="cate-00000027">
+            <Name TextId="txtid-00000058" />
+            <InfoText TextId="txtid-00000058" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000027" SubmoduleIdentNumber="0x10A40606" API="0" PROFIsafeSupported="true"  Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescCRC="5639">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000057" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000055" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="44802">
+                  <F_Check_iPar DefaultValue="NoCheck" AllowedValues="NoCheck" Changeable="false" Visible="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Changeable="true" Visible="true" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" AllowedValues="3-Byte-CRC" Changeable="false" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0..7" Changeable="false" Visible="true" />
+                  <F_Par_Version DefaultValue="1" AllowedValues="1" Changeable="false" Visible="true" />
+                  <F_Source_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_Dest_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_WD_Time DefaultValue="150" AllowedValues="40..10000" Changeable="true" Visible="true" />
+                  <F_Par_CRC DefaultValue="48021" AllowedValues="0..65535" Changeable="true" Visible="true" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo CategoryRef="cate-00000027">
+                <Name TextId="txtid-00000058" />
+                <InfoText TextId="txtid-00000058" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000028" ModuleIdentNumber="0x10A00707">
+          <ModuleInfo CategoryRef="cate-00000027">
+            <Name TextId="txtid-00000059" />
+            <InfoText TextId="txtid-00000059" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000028" SubmoduleIdentNumber="0x10A40707" API="0" PROFIsafeSupported="true"  Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescCRC="22158">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000057" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000055" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="44802">
+                  <F_Check_iPar DefaultValue="NoCheck" AllowedValues="NoCheck" Changeable="false" Visible="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Changeable="true" Visible="true" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" AllowedValues="3-Byte-CRC" Changeable="false" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0..7" Changeable="false" Visible="true" />
+                  <F_Par_Version DefaultValue="1" AllowedValues="1" Changeable="false" Visible="true" />
+                  <F_Source_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_Dest_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_WD_Time DefaultValue="150" AllowedValues="40..10000" Changeable="true" Visible="true" />
+                  <F_Par_CRC DefaultValue="48021" AllowedValues="0..65535" Changeable="true" Visible="true" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo CategoryRef="cate-00000027">
+                <Name TextId="txtid-00000059" />
+                <InfoText TextId="txtid-00000059" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000029" ModuleIdentNumber="0x10A00808">
+          <ModuleInfo CategoryRef="cate-00000027">
+            <Name TextId="txtid-00000060" />
+            <InfoText TextId="txtid-00000060" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000029" SubmoduleIdentNumber="0x10A40808" API="0" PROFIsafeSupported="true"  Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescCRC="47899">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000057" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000055" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="44802">
+                  <F_Check_iPar DefaultValue="NoCheck" AllowedValues="NoCheck" Changeable="false" Visible="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Changeable="true" Visible="true" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" AllowedValues="3-Byte-CRC" Changeable="false" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0..7" Changeable="false" Visible="true" />
+                  <F_Par_Version DefaultValue="1" AllowedValues="1" Changeable="false" Visible="true" />
+                  <F_Source_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_Dest_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_WD_Time DefaultValue="150" AllowedValues="40..10000" Changeable="true" Visible="true" />
+                  <F_Par_CRC DefaultValue="48021" AllowedValues="0..65535" Changeable="true" Visible="true" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo CategoryRef="cate-00000027">
+                <Name TextId="txtid-00000060" />
+                <InfoText TextId="txtid-00000060" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000030" ModuleIdentNumber="0x10A00909">
+          <ModuleInfo CategoryRef="cate-00000027">
+            <Name TextId="txtid-00000061" />
+            <InfoText TextId="txtid-00000061" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000030" SubmoduleIdentNumber="0x10A40909" API="0" PROFIsafeSupported="true"  Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescCRC="64402">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000057" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000055" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="44802">
+                  <F_Check_iPar DefaultValue="NoCheck" AllowedValues="NoCheck" Changeable="false" Visible="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Changeable="true" Visible="true" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" AllowedValues="3-Byte-CRC" Changeable="false" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0..7" Changeable="false" Visible="true" />
+                  <F_Par_Version DefaultValue="1" AllowedValues="1" Changeable="false" Visible="true" />
+                  <F_Source_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_Dest_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_WD_Time DefaultValue="150" AllowedValues="40..10000" Changeable="true" Visible="true" />
+                  <F_Par_CRC DefaultValue="48021" AllowedValues="0..65535" Changeable="true" Visible="true" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo CategoryRef="cate-00000027">
+                <Name TextId="txtid-00000061" />
+                <InfoText TextId="txtid-00000061" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000031" ModuleIdentNumber="0x10A00A0A">
+          <ModuleInfo CategoryRef="cate-00000027">
+            <Name TextId="txtid-00000062" />
+            <InfoText TextId="txtid-00000062" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000031" SubmoduleIdentNumber="0x10A40A0A" API="0" PROFIsafeSupported="true"  Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescCRC="14857">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000057" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000055" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="44802">
+                  <F_Check_iPar DefaultValue="NoCheck" AllowedValues="NoCheck" Changeable="false" Visible="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Changeable="true" Visible="true" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" AllowedValues="3-Byte-CRC" Changeable="false" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0..7" Changeable="false" Visible="true" />
+                  <F_Par_Version DefaultValue="1" AllowedValues="1" Changeable="false" Visible="true" />
+                  <F_Source_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_Dest_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_WD_Time DefaultValue="150" AllowedValues="40..10000" Changeable="true" Visible="true" />
+                  <F_Par_CRC DefaultValue="48021" AllowedValues="0..65535" Changeable="true" Visible="true" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo CategoryRef="cate-00000027">
+                <Name TextId="txtid-00000062" />
+                <InfoText TextId="txtid-00000062" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000032" ModuleIdentNumber="0x10A00B0B">
+          <ModuleInfo CategoryRef="cate-00000027">
+            <Name TextId="txtid-00000063" />
+            <InfoText TextId="txtid-00000063" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000032" SubmoduleIdentNumber="0x10A40B0B" API="0" PROFIsafeSupported="true"  Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescCRC="31360">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000057" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000055" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="44802">
+                  <F_Check_iPar DefaultValue="NoCheck" AllowedValues="NoCheck" Changeable="false" Visible="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Changeable="true" Visible="true" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" AllowedValues="3-Byte-CRC" Changeable="false" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0..7" Changeable="false" Visible="true" />
+                  <F_Par_Version DefaultValue="1" AllowedValues="1" Changeable="false" Visible="true" />
+                  <F_Source_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_Dest_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_WD_Time DefaultValue="150" AllowedValues="40..10000" Changeable="true" Visible="true" />
+                  <F_Par_CRC DefaultValue="48021" AllowedValues="0..65535" Changeable="true" Visible="true" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo CategoryRef="cate-00000027">
+                <Name TextId="txtid-00000063" />
+                <InfoText TextId="txtid-00000063" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="MI00000033" ModuleIdentNumber="0x10A00C0C">
+          <ModuleInfo CategoryRef="cate-00000027">
+            <Name TextId="txtid-00000064" />
+            <InfoText TextId="txtid-00000064" />
+            <OrderNumber Value="A05B-2600-R834" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMID00000033" SubmoduleIdentNumber="0x10A40C0C" API="0" PROFIsafeSupported="true"  Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" F_IO_StructureDescCRC="3595">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000056" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000057" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="Unsigned8" UseAsBits="true" TextId="txtid-00000054" />
+                  <DataItem DataType="F_MessageTrailer4Byte" TextId="txtid-00000055" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <F_ParameterRecordDataItem Index="100" F_ParamDescCRC="44802">
+                  <F_Check_iPar DefaultValue="NoCheck" AllowedValues="NoCheck" Changeable="false" Visible="false" />
+                  <F_SIL DefaultValue="SIL3" AllowedValues="SIL3" Changeable="true" Visible="true" />
+                  <F_CRC_Length DefaultValue="3-Byte-CRC" AllowedValues="3-Byte-CRC" Changeable="false" Visible="true" />
+                  <F_Block_ID DefaultValue="0" AllowedValues="0..7" Changeable="false" Visible="true" />
+                  <F_Par_Version DefaultValue="1" AllowedValues="1" Changeable="false" Visible="true" />
+                  <F_Source_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_Dest_Add DefaultValue="1" AllowedValues="1..65534" Changeable="true" Visible="true" />
+                  <F_WD_Time DefaultValue="150" AllowedValues="40..10000" Changeable="true" Visible="true" />
+                  <F_Par_CRC DefaultValue="48021" AllowedValues="0..65535" Changeable="true" Visible="true" />
+                </F_ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo CategoryRef="cate-00000027">
+                <Name TextId="txtid-00000064" />
+                <InfoText TextId="txtid-00000064" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <GraphicsList>
+        <GraphicItem GraphicFile="GSDML-01B7-0003-R30IB" ID="grafId-00000000" />
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem ID="cate-00000000" TextId="txtid-00000007" />
+        <CategoryItem ID="cate-00000001" TextId="txtid-00000009" />
+        <CategoryItem ID="cate-00000002" TextId="txtid-00000013" />
+        <CategoryItem ID="cate-00000003" TextId="txtid-00000015" />
+        <CategoryItem ID="cate-00000004" TextId="txtid-00000017" />
+        <CategoryItem ID="cate-00000005" TextId="txtid-00000019" />
+        <CategoryItem ID="cate-00000006" TextId="txtid-00000021" />
+        <CategoryItem ID="cate-00000007" TextId="txtid-00000023" />
+        <CategoryItem ID="cate-00000008" TextId="txtid-00000025" />
+        <CategoryItem ID="cate-00000009" TextId="txtid-00000027" />
+        <CategoryItem ID="cate-00000010" TextId="txtid-00000028" />
+        <CategoryItem ID="cate-00000011" TextId="txtid-00000030" />
+        <CategoryItem ID="cate-00000012" TextId="txtid-00000032" />
+        <CategoryItem ID="cate-00000013" TextId="txtid-00000034" />
+        <CategoryItem ID="cate-00000014" TextId="txtid-00000036" />
+        <CategoryItem ID="cate-00000015" TextId="txtid-00000038" />
+        <CategoryItem ID="cate-00000016" TextId="txtid-00000040" />
+        <CategoryItem ID="cate-00000017" TextId="txtid-00000042" />
+        <CategoryItem ID="cate-00000018" TextId="txtid-00000044" />
+        <CategoryItem ID="cate-00000019" TextId="txtid-00000043" />
+        <CategoryItem ID="cate-00000020" TextId="txtid-00000045" />
+        <CategoryItem ID="cate-00000021" TextId="txtid-00000046" />
+        <CategoryItem ID="cate-00000022" TextId="txtid-00000047" />
+        <CategoryItem ID="cate-00000023" TextId="txtid-00000048" />
+        <CategoryItem ID="cate-00000024" TextId="txtid-00000049" />
+        <CategoryItem ID="cate-00000025" TextId="txtid-00000050" />
+        <CategoryItem ID="cate-00000026" TextId="txtid-00000051" />
+        <CategoryItem ID="cate-00000027" TextId="txtid-00000053" />
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="txtid-00000000" Value="FANUC Robot Controller" />
+          <Text TextId="txtid-00000001" Value="A05B-2600-R834: FANUC Robot Controller (1.0)" />
+          <Text TextId="txtid-00000002" Value="FANUC 2 channel PROFINET card" />
+          <Text TextId="txtid-00000003" Value="I/F" />
+          <Text TextId="txtid-00000004" Value="Port 1" />
+          <Text TextId="txtid-00000005" Value="Port 2" />
+          <Text TextId="txtid-00000006" Value="1 Input byte, 1 Output byte" />
+          <Text TextId="txtid-00000007" Value="Input/Output module" />
+          <Text TextId="txtid-00000008" Value="!!!" />
+          <Text TextId="txtid-00000009" Value="1 Input byte, 1 Output byte" />
+          <Text TextId="txtid-00000010" Value="Data IN" />
+          <Text TextId="txtid-00000011" Value="Data OUT" />
+          <Text TextId="txtid-00000012" Value="2 Input bytes, 2 Output bytes" />
+          <Text TextId="txtid-00000013" Value="2 Input bytes/2 Ouputs bytes" />
+          <Text TextId="txtid-00000014" Value="4 Input bytes, 4 Output bytes" />
+          <Text TextId="txtid-00000015" Value="4 Input bytes/4 Output bytes" />
+          <Text TextId="txtid-00000016" Value="8 Input bytes, 8 Output bytes" />
+          <Text TextId="txtid-00000017" Value="8 Input bytes/8 Output bytes" />
+          <Text TextId="txtid-00000018" Value="16 Input bytes, 16 Output bytes" />
+          <Text TextId="txtid-00000019" Value="16 Input bytes/16 Output bytes" />
+          <Text TextId="txtid-00000020" Value="32 Input bytes, 32 Output bytes" />
+          <Text TextId="txtid-00000021" Value="32 Input bytes/32 Output bytes" />
+          <Text TextId="txtid-00000022" Value="64 Input bytes, 64 Output bytes" />
+          <Text TextId="txtid-00000023" Value="64 Input bytes/64 Output bytes" />
+          <Text TextId="txtid-00000024" Value="128 Input bytes, 128 Output bytes" />
+          <Text TextId="txtid-00000025" Value="128 Input bytes/128 Output bytes" />
+          <Text TextId="txtid-00000026" Value="1 Input byte" />
+          <Text TextId="txtid-00000027" Value="Input module" />
+          <Text TextId="txtid-00000028" Value="1 Input byte" />
+          <Text TextId="txtid-00000029" Value="2 Input bytes" />
+          <Text TextId="txtid-00000030" Value="2 Input bytes" />
+          <Text TextId="txtid-00000031" Value="4 Input bytes" />
+          <Text TextId="txtid-00000032" Value="4 Input bytes" />
+          <Text TextId="txtid-00000033" Value="8 Input bytes" />
+          <Text TextId="txtid-00000034" Value="8 Input bytes" />
+          <Text TextId="txtid-00000035" Value="16 Input bytes" />
+          <Text TextId="txtid-00000036" Value="16 Input bytes" />
+          <Text TextId="txtid-00000037" Value="32 Input bytes" />
+          <Text TextId="txtid-00000038" Value="32 Input bytes" />
+          <Text TextId="txtid-00000039" Value="64 Input bytes" />
+          <Text TextId="txtid-00000040" Value="64 Input bytes" />
+          <Text TextId="txtid-00000041" Value="128 Input bytes" />
+          <Text TextId="txtid-00000042" Value="128 Input bytes" />
+          <Text TextId="txtid-00000043" Value="1 Output byte" />
+          <Text TextId="txtid-00000044" Value="Output module" />
+          <Text TextId="txtid-00000045" Value="2 Output bytes" />
+          <Text TextId="txtid-00000046" Value="4 Output bytes" />
+          <Text TextId="txtid-00000047" Value="8 Output bytes" />
+          <Text TextId="txtid-00000048" Value="16 Output bytes" />
+          <Text TextId="txtid-00000049" Value="32 Output bytes" />
+          <Text TextId="txtid-00000050" Value="64 Output bytes" />
+          <Text TextId="txtid-00000051" Value="128 Output bytes" />
+          <Text TextId="txtid-00000052" Value="PS 1 byte" />
+          <Text TextId="txtid-00000053" Value="Safety module" />
+          <Text TextId="txtid-00000054" Value="PS Output 1 byte" />
+          <Text TextId="txtid-00000055" Value="PS Output Trailer 4 bytes" />
+          <Text TextId="txtid-00000056" Value="PS Input 1 byte" />
+          <Text TextId="txtid-00000057" Value="PS Input Trailer 4 bytes" />
+          <Text TextId="txtid-00000058" Value="PS 2 bytes" />
+          <Text TextId="txtid-00000059" Value="PS 3 bytes" />
+          <Text TextId="txtid-00000060" Value="PS 4 bytes" />
+          <Text TextId="txtid-00000061" Value="PS 5 bytes" />
+          <Text TextId="txtid-00000062" Value="PS 6 bytes" />
+          <Text TextId="txtid-00000063" Value="PS 7 bytes" />
+          <Text TextId="txtid-00000064" Value="PS 8 bytes" />
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

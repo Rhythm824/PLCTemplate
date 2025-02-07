@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.3.xsd">
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x023F" DeviceID="0x16F5">
+			<InfoText TextId="DeviceDescription"/>
+			<VendorName Value="Kistler Instrumente AG"/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="General" ProductFamily="maXYmos"/>
+		</DeviceFunction>
+		<ApplicationProcess>
+			<DeviceAccessPointList>
+				<DeviceAccessPointItem ID="DIM 1" PhysicalSlots="0..2" ModuleIdentNumber="0x00000001" MinDeviceInterval="64" ImplementationType="netX" DNS_CompatibleName="MAXYMOS" FixedInSlots="0" ObjectUUID_LocalIndex="1" PNIO_Version="V2.2" MultipleWriteSupported="true" SharedDeviceSupported="false" SharedInputSupported="false" DeviceAccessSupported="true">
+					<ModuleInfo>
+						<Name TextId="maXYmos"/>
+						<InfoText TextId="DeviceDescription"/>
+						<VendorName Value="Kistler Instrumente AG"/>
+						<OrderNumber Value="58771"/>
+						<HardwareRelease Value="1"/>
+						<SoftwareRelease Value="1.1.x"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="X1"/>
+						<SubslotItem SubslotNumber="32769" TextId="X1P1"/>
+						<SubslotItem SubslotNumber="32770" TextId="X1P2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="226" MaxOutputLength="226"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="1" FixedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="2" FixedInSlots="2"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DIM 1" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3 4">
+							<IOData IOCS_Length="1" IOPS_Length="1"/>
+							<ModuleInfo CategoryRef="DAP Module">
+								<Name TextId="maXYmos"/>
+								<InfoText TextId="DIM 1_InfoText"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="DIM 1 Interfacesubmodule" NetworkComponentDiagnosisSupported="true" SubmoduleIdentNumber="0x00000001" SubslotNumber="32768" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1" TextId="PN-IO">
+							<ApplicationRelations NumberOfAR="0" StartupMode="Legacy">
+								<TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128"/>
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="DIM 1 Portsubmodule 1" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" SubmoduleIdentNumber="0x00000002" SubslotNumber="32769" TextId="Port1"/>
+						<PortSubmoduleItem ID="DIM 1 Portsubmodule 2" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" SubmoduleIdentNumber="0x00000002" SubslotNumber="32770" TextId="Port2"/>
+					</SystemDefinedSubmoduleList>
+				</DeviceAccessPointItem>
+			</DeviceAccessPointList>
+
+			<ModuleList>
+				<!-- Eingabemodule -->
+				<ModuleItem ID="1" ModuleIdentNumber="0x00000004">
+					<ModuleInfo CategoryRef="Input Module">
+						<Name TextId="220 Bytes In"/>
+						<InfoText TextId="220 Bytes In"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x00000003">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input>
+									<DataItem DataType="OctetString" Length="220" TextId="Inputs"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="Submodule_220byteinput_Name"/>
+								<InfoText TextId="Submodule_220byteinput_InfoText"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Ausgabemodule -->
+				<ModuleItem ID="2" ModuleIdentNumber="0x00000005">
+					<ModuleInfo CategoryRef="Output Module">
+						<Name TextId="220 Bytes Out"/>
+						<InfoText TextId="220 Bytes Out"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="4" SubmoduleIdentNumber="0x00000004">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Output>
+									<DataItem DataType="OctetString" Length="220" TextId="Outputs"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="Submodule_220byteoutput_Name"/>
+								<InfoText TextId="Submodule_220byteoutput_InfoText"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+			</ModuleList>
+
+			<CategoryList>
+				<CategoryItem ID="Input Module" TextId="Input Module"/>
+				<CategoryItem ID="Output Module" TextId="Output Module"/>
+				<CategoryItem ID="DAP Module" TextId="DAP Module_CategoryName"/>
+			</CategoryList>
+
+			<ExternalTextList>
+				<PrimaryLanguage>
+					<Text TextId="maXYmos" Value="maXYmos"/>
+					<Text TextId="DeviceDescription" Value="PROFINET IO-Device"/>
+					<!--Baugruppeneinteilung-->
+					<Text TextId="Input Module" Value="Input modules"/>
+					<Text TextId="Output Module" Value="Output modules"/>
+					<Text TextId="DAP Module_CategoryName" Value="Device Access Point Modules"/>
+					<Text TextId="DIM 1_InfoText" Value="maXYmos TL with support for RT Communication."/>
+					<!--Eingabemodule-->
+					<Text TextId="220 Bytes In" Value="220 Bytes In"/>
+					<Text TextId="Inputs" Value="Inputs"/>
+					<!--Ausgabemodule-->
+					<Text TextId="220 Bytes Out" Value="220 Bytes Out"/>
+					<Text TextId="Submodule_220byteinput_InfoText" Value="20 Byte Input submodule"/>
+					<Text TextId="Submodule_220byteinput_Name" Value="20 Byte Input"/>
+					<Text TextId="Submodule_220byteoutput_InfoText" Value="20 Byte Output submodule"/>
+					<Text TextId="Submodule_220byteoutput_Name" Value="20 Byte Output"/>
+					<Text TextId="Outputs" Value="Outputs"/>
+					<Text TextId="X1" Value="X1"/>
+					<Text TextId="X1P1" Value="X1 P1"/>
+					<Text TextId="X1P2" Value="X1 P2"/>
+					<Text TextId="PN-IO" Value="PN-IO"/>
+					<Text TextId="Port1" Value="Port 1"/>
+					<Text TextId="Port2" Value="Port 2"/>
+				</PrimaryLanguage>
+				<Language xml:lang="de">
+					<Text TextId="maXYmos" Value="maXYmos"/>
+					<Text TextId="DeviceDescription" Value="PROFINET IO-Device"/>
+					<!--Baugruppeneinteilung-->
+					<Text TextId="Input Module" Value="Eingabemodule"/>
+					<Text TextId="Output Module" Value="Ausgabemodule"/>
+					<Text TextId="DAP Module_CategoryName" Value="Device Access Point Module"/>
+					<Text TextId="DIM 1_InfoText" Value="maXYmos TL mit Unterstützung für RT Kommunikation."/>
+					<!--Eingabemodule-->
+					<Text TextId="220 Bytes In" Value="220 Bytes In"/>
+					<Text TextId="Inputs" Value="Eingänge"/>
+					<!--Ausgabemodule-->
+					<Text TextId="220 Bytes Out" Value="220 Bytes Out"/>
+					<Text TextId="Submodule_220byteinput_InfoText" Value="20 Byte Eingangssubmodul"/>
+					<Text TextId="Submodule_220byteinput_Name" Value="20 Byte Eingang"/>
+					<Text TextId="Submodule_220byteoutput_InfoText" Value="20 Byte Ausgangssubmodul"/>
+					<Text TextId="Submodule_220byteoutput_Name" Value="20 Byte Ausgang"/>
+					<Text TextId="Outputs" Value="Ausgänge"/>
+					<Text TextId="X1" Value="X1"/>
+					<Text TextId="X1P1" Value="X1 P1"/>
+					<Text TextId="X1P2" Value="X1 P2"/>
+					<Text TextId="PN-IO" Value="PN-IO"/>
+					<Text TextId="Port1" Value="Port 1"/>
+					<Text TextId="Port2" Value="Port 2"/>
+				</Language>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

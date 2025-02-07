@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.3.xsd">
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x02D5" DeviceID="0x0001">
+			<InfoText TextId="T_ID_DEV_DESCRIPTION" />
+			<VendorName Value="YAMAHA Motor Co., Ltd." />
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="General" ProductFamily="YAMAHA RCX3 PROFINET" />
+		</DeviceFunction>
+		<ApplicationProcess>
+
+<!-- ============================================================================================ -->
+<!--   List of Device Access Points (DAP)                                                         -->
+<!-- ============================================================================================ -->
+			<DeviceAccessPointList>
+
+				<DeviceAccessPointItem ID="DAP V2.0" PhysicalSlots="0..2" ModuleIdentNumber="0x00000011" MinDeviceInterval="64" ImplementationType="NP30" DNS_CompatibleName="YAMAHA-RCX3-PROFINET" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" NameOfStationNotTransferable="true" RequiredSchemaVersion="V2.25" ParameterizationSpeedupSupported="false"  PNIO_Version="V2.2">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2" />
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+						<VendorName Value="YAMAHA Motor Co., Ltd." />
+						<OrderNumber Value="YAMAHA-RCX3-PROFINET" />
+						<HardwareRelease Value="2" />
+						<SoftwareRelease Value="V2.7.2" />
+					</ModuleInfo>
+
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE" />
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1" />
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2" />
+					</SubslotList>
+
+					<IOConfigData MaxInputLength="324" MaxOutputLength="324" />
+
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INOUT16W" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INOUT16B" AllowedInSlots="2"/>
+					</UseableModules>
+
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0" SubmoduleIdentNumber="0x00000001" API="0" Writeable_IM_Records="1 2 3 4">
+							<IOData IOPS_Length="1" IOCS_Length="1" />
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2" />
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" DCP_HelloSupported="false" IsochroneModeSupported="false" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" />
+						<PortSubmoduleItem ID="Port 2" SubslotNumber="32770" SubmoduleIdentNumber="0x0004" MAUTypes="16" TextId="T_ID_PORT2" />
+					</SystemDefinedSubmoduleList>
+
+				</DeviceAccessPointItem>
+
+			</DeviceAccessPointList>
+
+<!-- List of modules -->
+
+			<ModuleList>
+
+				<!-- Output/Input 16 Word -->
+				<ModuleItem ID="ID_MODULE_INOUT16W" ModuleIdentNumber="0x00000022">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="ModName IN/OUT 16 Words"/>
+						<InfoText TextId="ModInfoText IN/OUT 16 Words"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INOUT16W" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_INPUT"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_W_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+							<Name TextId="SubModName IN/OUT 16 Words"/>
+							<InfoText TextId="SubModInfoText IN/OUT 16 Words"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!-- Output/Input 16Byte -->
+				<ModuleItem ID="ID_MODULE_INOUT16B" ModuleIdentNumber="0x00000033">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="ModName IN/OUT 16 Bytes"/>
+						<InfoText TextId="ModInfoText IN/OUT 16 Bytes"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INOUT16B" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_INPUT"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+									<DataItem DataType="Unsigned8" TextId="T_ID_B_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+							<Name TextId="SubModName IN/OUT 16 Bytes"/>
+							<InfoText TextId="SubModInfoText IN/OUT 16 Bytes"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+			</ModuleList>
+
+<!-- List of values -->
+
+<!-- List of categories -->
+			<CategoryList>
+				<CategoryItem ID="CAT_REF_MODULES" TextId="T_ID_CAT_REF_MODULES" />
+				<CategoryItem ID="CAT_REF_MIGRATION_DAP" TextId="T_ID_MIGRATION_DAP" />
+			</CategoryList>
+
+<!-- List of texts -->
+			<ExternalTextList>
+				<PrimaryLanguage>
+					<!--Device Access Point information etc -->
+					<Text TextId="T_ID_DEV_DESCRIPTION" Value="YAMAHA RCX3 PROFINET IO 2-Port" />
+					<Text TextId="T_ID_V1_DEV_DESCRIPTION" Value="This Device Access Point may be used by IO Controllers that do not support extended PROFINET diagnostics. RT communication is supported" />
+					<Text TextId="T_ID_V15_DEV_DESCRIPTION" Value="This Device Access Point may be used by IO Controllers that do not support extended PROFINET diagnostics. RT communication is supported" />
+					<Text TextId="T_ID_V2_DEV_DESCRIPTION" Value="This Device Access Point supports RT communication" />
+					<Text TextId="T_ID_DAP_V1" Value="RT" />
+					<Text TextId="T_ID_DAP_V15" Value="RT (FW&gt;=1.13)" />
+					<Text TextId="T_ID_DAP_V2" Value="RT" />
+					<Text TextId="T_ID_SS_INTERFACE" Value="X1" />
+					<Text TextId="T_ID_SS_PORT1" Value="P1" />
+					<Text TextId="T_ID_SS_PORT2" Value="P2" />
+					<Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface" />
+					<Text TextId="T_ID_PORT" Value="Port 1" />
+					<Text TextId="T_ID_PORT2" Value="Port 2" />
+
+					<!--Module category-->
+					<Text TextId="T_ID_CAT_REF_MODULES" Value="Input/Output" />
+					<Text TextId="T_ID_MIGRATION_DAP" Value="Migration" />
+
+					<!-- Vendor module texts -->
+					<Text TextId="T_ID_INPUT" Value="Input" />
+					<Text TextId="T_ID_OUTPUT" Value="Output" />
+					<Text TextId="T_ID_W_INPUT" Value="Word-input" />
+					<Text TextId="T_ID_W_OUTPUT" Value="Word-output" />
+					<Text TextId="T_ID_B_INPUT" Value="Bit-input" />
+					<Text TextId="T_ID_B_OUTPUT" Value="Bit-output" />
+					
+
+					<!-- IN/OUT 16 Words -->
+					<Text TextId="ModName IN/OUT 16 Words" Value="IN/OUT 16 Words"/>
+					<Text TextId="ModInfoText IN/OUT 16 Words" Value="IN/OUT 16 Words"/>
+					<Text TextId="SubModName IN/OUT 16 Words" Value="IN/OUT 16 Words"/>
+					<Text TextId="SubModInfoText IN/OUT 16 Words" Value="IN/OUT 16 Words"/>
+
+					<!-- IN/OUT 16 Bytes -->
+					<Text TextId="ModName IN/OUT 16 Bytes" Value="IN/OUT 16 Bytes"/>
+					<Text TextId="ModInfoText IN/OUT 16 Bytes" Value="IN/OUT 16 Bytes"/>
+					<Text TextId="SubModName IN/OUT 16 Bytes" Value="IN/OUT 16 Bytes"/>
+					<Text TextId="SubModInfoText IN/OUT 16 Bytes" Value="IN/OUT 16 Bytes"/>
+
+				</PrimaryLanguage>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

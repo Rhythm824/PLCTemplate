@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile  ..\XSD\GSDML-DeviceProfile-v2.2.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x002A" DeviceID="0x0C01">
+      <InfoText TextId="IDT_FamilyDescription" />
+      <VendorName Value="SIEMENS" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Ident Systems" ProductFamily="SIMATIC RFID" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP 1" PhysicalSlots="0..1" ModuleIdentNumber="0x00000001" MinDeviceInterval="32" ImplementationType="ERTEC400" DNS_CompatibleName="rf180c" ExtendedAddressAssignmentSupported="false" FixedInSlots="0" ObjectUUID_LocalIndex="1">
+          <ModuleInfo>
+            <Name TextId="IDT_MODULE_NAME_DAP1" />
+            <InfoText TextId="IDT_INFO_DAP" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6GT2 002-0JD00" />
+            <HardwareRelease Value="7.0" />
+            <SoftwareRelease Value="2.0" />
+          </ModuleInfo>
+          <IOConfigData MaxInputLength="7" MaxOutputLength="7" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="IDM_1" FixedInSlots="1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP 1" SubmoduleIdentNumber="0x00000001">
+              <IOData />
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="10" TransferSequence="0">
+                  <Name TextId="IDT_GENERAL_PARAMETERS" />
+                  <Const Data="0x01,0x05,0x04,0x01,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="IDT_PARA_USER_MODE" ByteOffset="0" DataType="Unsigned8" DefaultValue="1" AllowedValues="1 4 5 3" Changeable="true" Visible="true" TextId="IDT_PARA_USER_MODE" />
+                  <Ref ValueItemTarget="IDT_PARA_MOBY_MODE" ByteOffset="1" DataType="Unsigned8" DefaultValue="5" AllowedValues="1 129 5 133 149" Changeable="true" Visible="true" TextId="IDT_PARA_MOBY_MODE" />
+                  <Ref ValueItemTarget="IDT_PARA_BAUDRATE" ByteOffset="2" DataType="Unsigned8" DefaultValue="4" AllowedValues="1 3 4" Changeable="true" Visible="true" TextId="IDT_PARA_BAUDRATE" />
+                  <Ref ValueItemTarget="IDT_PARA_DIAG" ByteOffset="3" DataType="Unsigned8" DefaultValue="1" AllowedValues="1 2 4" Changeable="true" Visible="true" TextId="IDT_PARA_DIAG" />
+                  <Ref ValueItemTarget="IDT_PARA_STARTLED" ByteOffset="5" DataType="Unsigned8" DefaultValue="0" AllowedValues="0..2" Changeable="true" Visible="true" TextId="IDT_PARA_STARTLED" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="IDT_Standard_no_PDEV" />
+                <InfoText TextId="IDT_ModInfo_InfoTextId_DAP1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="IDG_RF180C_1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP 2" PhysicalSlots="0..1" ModuleIdentNumber="0x00000001" MinDeviceInterval="32" ImplementationType="ERTEC400" DNS_CompatibleName="rf180c" ExtendedAddressAssignmentSupported="false" AddressAssignment="DCP" FixedInSlots="0" ObjectUUID_LocalIndex="1" RemoteApplicationTimeout="3" IOXS_Required="true" RequiredSchemaVersion="V1.0" MaxSupportedRecordSize="4068" ParameterizationSpeedupSupported="true" PowerOnToCommReady="10000">
+          <ModuleInfo>
+            <Name TextId="IDT_MODULE_NAME_DAP2" />
+            <InfoText TextId="IDT_INFO_DAP" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6GT2 002-0JD00" />
+            <HardwareRelease Value="7.0" />
+            <SoftwareRelease Value="2.0" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="IDT_Subslot_8000" />
+            <SubslotItem SubslotNumber="32769" TextId="IDT_Subslot_8001" />
+            <SubslotItem SubslotNumber="32770" TextId="IDT_Subslot_8002" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="10" MaxOutputLength="10" MaxDataLength="20" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="IDM_1" FixedInSlots="1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP 2" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3">
+              <IOData IOPS_Length="1" IOCS_Length="1" />
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="10" TransferSequence="0">
+                  <Name TextId="IDT_GENERAL_PARAMETERS" />
+                  <Const Data="0x01,0x05,0x04,0x01,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="IDT_PARA_USER_MODE" ByteOffset="0" DataType="Unsigned8" DefaultValue="1" AllowedValues="1 4 5 3" Changeable="true" Visible="true" TextId="IDT_PARA_USER_MODE" />
+                  <Ref ValueItemTarget="IDT_PARA_MOBY_MODE" ByteOffset="1" DataType="Unsigned8" DefaultValue="5" AllowedValues="1 129 5 133 149" Changeable="true" Visible="true" TextId="IDT_PARA_MOBY_MODE" />
+                  <Ref ValueItemTarget="IDT_PARA_BAUDRATE" ByteOffset="2" DataType="Unsigned8" DefaultValue="4" AllowedValues="1 3 4" Changeable="true" Visible="true" TextId="IDT_PARA_BAUDRATE" />
+                  <Ref ValueItemTarget="IDT_PARA_DIAG" ByteOffset="3" DataType="Unsigned8" DefaultValue="1" AllowedValues="1 2 4" Changeable="true" Visible="true" TextId="IDT_PARA_DIAG" />
+                  <Ref ValueItemTarget="IDT_PARA_STARTLED" ByteOffset="5" DataType="Unsigned8" DefaultValue="0" AllowedValues="0..2" Changeable="true" Visible="true" TextId="IDT_PARA_STARTLED" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="IDT_Standard" />
+                <InfoText TextId="IDT_ModInfo_InfoTextId_DAP2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem SubslotNumber="32768" SubmoduleIdentNumber="0x00000002" TextId="IDT_INTERFACESUBMODULE_TEXT" SupportedRT_Class="Class2" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2" IsochroneModeSupported="false" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true">
+              <RT_Class3Properties MaxBridgeDelay="1920" MaxNumberIR_FrameData="400" />
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem SubslotNumber="32769" SubmoduleIdentNumber="0x00000003" MAUType="100BASETXFD" MAUTypes="16" TextId="IDT_Port1" MaxPortRxDelay="190" MaxPortTxDelay="1088" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" />
+            <PortSubmoduleItem SubslotNumber="32770" SubmoduleIdentNumber="0x00000003" MAUType="100BASETXFD" MAUTypes="16" TextId="IDT_Port2" MaxPortRxDelay="190" MaxPortTxDelay="1088" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="IDG_RF180C_2" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="IDM_1" ModuleIdentNumber="0x00000027">
+          <ModuleInfo>
+            <Name TextId="IDT_MODULE_NAME_Module1" />
+            <InfoText TextId="IDT_INFO_Module1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_2" SubmoduleIdentNumber="0x00000001" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_READER1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_READER2" />
+                </Input>
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_READER1" />
+                  <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_READER2" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="IDT_MODULE_NAME_Module1" />
+                <InfoText TextId="IDT_INFO_Module1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <ValueList>
+        <ValueItem ID="IDT_PARA_USER_MODE">
+          <Assignments>
+            <Assign Content="1" TextId="IDT_FB45" />
+            <Assign Content="4" TextId="IDT_FB55" />
+            <Assign Content="5" TextId="IDT_FB56" />
+            <Assign Content="3" TextId="IDT_PIB" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="IDT_PARA_MOBY_MODE">
+          <Assignments>
+            <Assign Content="1" TextId="IDT_MOBYI" />
+            <Assign Content="129" TextId="IDT_MOBYI_FH" />
+            <Assign Content="5" TextId="IDT_MOBYU" />
+            <Assign Content="133" TextId="IDT_MOBYU_FH" />
+            <Assign Content="149" TextId="IDT_MOBY300_FH" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="IDT_PARA_BAUDRATE">
+          <Assignments>
+            <Assign Content="1" TextId="IDT_19_2" />
+            <Assign Content="3" TextId="IDT_57_6" />
+            <Assign Content="4" TextId="IDT_115_2" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="IDT_PARA_DIAG">
+          <Assignments>
+            <Assign Content="1" TextId="IDT_KEIN" />
+            <Assign Content="2" TextId="IDT_HARD" />
+            <Assign Content="4" TextId="IDT_HARD_SOFT" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="IDT_PARA_STARTLED">
+          <Assignments>
+            <Assign Content="0" TextId="IDT_KEINE_ST" />
+            <Assign Content="1" TextId="IDT_KANAL_1" />
+            <Assign Content="2" TextId="IDT_KANAL_2" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="Diagostics RF180C">
+          <Assignments>
+            <Assign Content="3" TextId="IDT_KOMMFEHLER" />
+            <Assign Content="15" TextId="IDT_HOCHLAUF" />
+            <Assign Content="17" TextId="IDT_KURZSCHLUSS" />
+            <Assign Content="20" TextId="IDT_FATAL" />
+            <Assign Content="32" TextId="IDT_HWFEHLER" />
+            <Assign Content="33" TextId="IDT_LADERFEHLER" />
+            <Assign Content="129" TextId="IDT_DOWNLOADACTIV" />
+            <Assign Content="130" TextId="IDT_DOWNLOADFERTIG" />
+            <Assign Content="133" TextId="IDT_DOWNLOADFEHLER" />
+          </Assignments>
+        </ValueItem>
+      </ValueList>
+      <UnitDiagTypeList>
+        <UnitDiagTypeItem UserStructureIdentifier="384">
+          <Ref ValueItemTarget="Diagostics RF180C" ByteOffset="9" DataType="Unsigned8" DefaultValue="15" TextId="IDT_Diagostics RF180C" />
+        </UnitDiagTypeItem>
+      </UnitDiagTypeList>
+      <GraphicsList>
+        <GraphicItem ID="IDG_RF180C_1" GraphicFile="GSDML_0C01_RF180C" />
+        <GraphicItem ID="IDG_RF180C_2" GraphicFile="GSDML_002A_0C01_RF180C" />
+      </GraphicsList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="IDT_FamilyDescription" Value="Communication modules for connecting Ident systems with PROFINET IO" />
+          <Text TextId="IDT_MODULE_NAME_DAP1" Value="RF180C V1.0" />
+          <Text TextId="IDT_MODULE_NAME_DAP2" Value="RF180C V2.2" />
+          <Text TextId="IDT_INFO_DAP" Value="Communication module RF180C (IP67) for connecting two readers with PROFINET IO" />
+          <Text TextId="IDT_Standard_no_PDEV" Value="Standard, no PDEV" />
+          <Text TextId="IDT_Standard" Value="Standard" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP1" Value="RF180C, for pnio controller without physical device" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP2" Value="RF180C, standard" />
+          <Text TextId="IDT_MODULE_NAME_Module1" Value="2x RS422 channels RFID" />
+          <Text TextId="IDT_INFO_Module1" Value="2 RS422 interfaces for connecting two readers of Ident systems" />
+          <Text TextId="IDT_DATAITEM_READER1" Value="Reader 1" />
+          <Text TextId="IDT_DATAITEM_READER2" Value="Reader 2" />
+          <Text TextId="IDT_GENERAL_PARAMETERS" Value="General parameters" />
+          <Text TextId="IDT_PARA_USER_MODE" Value="User Mode" />
+          <Text TextId="IDT_PARA_MOBY_MODE" Value="MOBY Mode" />
+          <Text TextId="IDT_PARA_BAUDRATE" Value="Transmission speed" />
+          <Text TextId="IDT_PARA_DIAG" Value="Diagnostic messages" />
+          <Text TextId="IDT_PARA_STARTLED" Value="Suppression of error LED" />
+          <Text TextId="IDT_FB45" Value="FB 45" />
+          <Text TextId="IDT_FB55" Value="FB 55" />
+          <Text TextId="IDT_FB56" Value="FB 56" />
+          <Text TextId="IDT_PIB" Value="RFID standard profile" />
+          <Text TextId="IDT_MOBYI" Value="MOBY I/E normal addressing" />
+          <Text TextId="IDT_MOBYI_FH" Value="MOBY I file handler" />
+          <Text TextId="IDT_MOBYU" Value="RF200/RF300/RF600 MOBY U/D normal addr." />
+          <Text TextId="IDT_MOBYU_FH" Value="MOBY U file handler" />
+          <Text TextId="IDT_MOBY300_FH" Value="RF300 file handler" />
+          <Text TextId="IDT_19_2" Value="19.2 kBaud" />
+          <Text TextId="IDT_57_6" Value="57.6 kBaud" />
+          <Text TextId="IDT_115_2" Value="115.2 kBaud" />
+          <Text TextId="IDT_KEIN" Value="None" />
+          <Text TextId="IDT_HARD" Value="Hard errors" />
+          <Text TextId="IDT_HARD_SOFT" Value="Hard/Soft errors" />
+          <Text TextId="IDT_KEINE_ST" Value="None" />
+          <Text TextId="IDT_KANAL_1" Value="channel 1" />
+          <Text TextId="IDT_KANAL_2" Value="channel 2" />
+          <Text TextId="IDT_Diagostics RF180C" Value="Diagnostic RF180C: " />
+          <Text TextId="IDT_KEIN_FEHLER" Value="No Error" />
+          <Text TextId="IDT_HOCHLAUF" Value="CM has started up" />
+          <Text TextId="IDT_KOMMFEHLER" Value="Connection error to reader" />
+          <Text TextId="IDT_KURZSCHLUSS" Value="Short circuit to reader" />
+          <Text TextId="IDT_FATAL" Value="Fatal error" />
+          <Text TextId="IDT_HWFEHLER" Value="Hardware error" />
+          <Text TextId="IDT_LADERFEHLER" Value="Loader error" />
+          <Text TextId="IDT_DOWNLOADACTIV" Value="Download active" />
+          <Text TextId="IDT_DOWNLOADFERTIG" Value="Download finished" />
+          <Text TextId="IDT_DOWNLOADFEHLER" Value="Download error" />
+          <Text TextId="IDT_INTERFACESUBMODULE_TEXT" Value="RF180C Interface" />
+          <Text TextId="IDT_Subslot_8000" Value="X1" />
+          <Text TextId="IDT_Subslot_8001" Value="X1 P1" />
+          <Text TextId="IDT_Subslot_8002" Value="X1 P2" />
+          <Text TextId="IDT_Port1" Value="Port 1" />
+          <Text TextId="IDT_Port2" Value="Port 2" />
+        </PrimaryLanguage>
+        <Language xml:lang="de">
+          <Text TextId="IDT_FamilyDescription" Value="Kommunikationsmodule zum Verbinden von Ident-Systemen mit PROFINET IO" />
+          <Text TextId="IDT_MODULE_NAME_DAP1" Value="RF180C V1.0" />
+          <Text TextId="IDT_MODULE_NAME_DAP2" Value="RF180C V2.2" />
+          <Text TextId="IDT_INFO_DAP" Value="Kommunikationsmodul RF180C (IP67) zur Verbindung zweier Reader mit PROFINET IO" />
+          <Text TextId="IDT_Standard_no_PDEV" Value="Standard, ohne PDEV" />
+          <Text TextId="IDT_Standard" Value="Standard" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP1" Value="RF180C, für pnio controller ohne physical device" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP2" Value="RF180C, standard" />
+          <Text TextId="IDT_MODULE_NAME_Module1" Value="2x RS422 Kanäle RFID" />
+          <Text TextId="IDT_INFO_Module1" Value="2x RS422-Schnittstellen zum Anschluss zweier Reader von Ident-Systemen" />
+          <Text TextId="IDT_DATAITEM_READER1" Value="Reader 1" />
+          <Text TextId="IDT_DATAITEM_READER2" Value="Reader 2" />
+          <Text TextId="IDT_GENERAL_PARAMETERS" Value="Allgemeine Parameter" />
+          <Text TextId="IDT_PARA_USER_MODE" Value="User Mode" />
+          <Text TextId="IDT_PARA_MOBY_MODE" Value="MOBY Mode" />
+          <Text TextId="IDT_PARA_BAUDRATE" Value="Übertragungsgeschwindigkeit" />
+          <Text TextId="IDT_PARA_DIAG" Value="Diagnosemeldungen" />
+          <Text TextId="IDT_PARA_STARTLED" Value="Unterdrückung Error-LED" />
+          <Text TextId="IDT_FB45" Value="FB 45" />
+          <Text TextId="IDT_FB55" Value="FB 55" />
+          <Text TextId="IDT_FB56" Value="FB 56" />
+          <Text TextId="IDT_PIB" Value="RFID-Normprofil" />
+          <Text TextId="IDT_MOBYI" Value="MOBY I/E-Normaladressierung" />
+          <Text TextId="IDT_MOBYI_FH" Value="MOBY I-Filehandler" />
+          <Text TextId="IDT_MOBYU" Value="RF200/RF300/RF600 MOBY U/D Normaladr." />
+          <Text TextId="IDT_MOBYU_FH" Value="MOBY U-Filehandler" />
+          <Text TextId="IDT_MOBY300_FH" Value="RF300-Filehandler" />
+          <Text TextId="IDT_19_2" Value="19.2 kBaud" />
+          <Text TextId="IDT_57_6" Value="57.6 kBaud" />
+          <Text TextId="IDT_115_2" Value="115.2 kBaud" />
+          <Text TextId="IDT_KEIN" Value="Keine" />
+          <Text TextId="IDT_HARD" Value="Hard Errors" />
+          <Text TextId="IDT_HARD_SOFT" Value="Hard/Soft Errors" />
+          <Text TextId="IDT_KEINE_ST" Value="Keine" />
+          <Text TextId="IDT_KANAL_1" Value="Kanal 1" />
+          <Text TextId="IDT_KANAL_2" Value="Kanal 2" />
+          <Text TextId="IDT_Diagostics RF180C" Value="Diagnose RF180C: " />
+          <Text TextId="IDT_KEIN_FEHLER" Value="Kein Fehler" />
+          <Text TextId="IDT_HOCHLAUF" Value="CM ist hochgelaufen" />
+          <Text TextId="IDT_KOMMFEHLER" Value="Verbindungsfehler zum Reader" />
+          <Text TextId="IDT_KURZSCHLUSS" Value="Kurzschluss zum Reader" />
+          <Text TextId="IDT_FATAL" Value="Fataler Fehler" />
+          <Text TextId="IDT_HWFEHLER" Value="Hardware-Fehler" />
+          <Text TextId="IDT_LADERFEHLER" Value="Lader-Fehler" />
+          <Text TextId="IDT_DOWNLOADACTIV" Value="Download aktiv" />
+          <Text TextId="IDT_DOWNLOADFERTIG" Value="Download fertig" />
+          <Text TextId="IDT_DOWNLOADFEHLER" Value="Download-Fehler" />
+          <Text TextId="IDT_INTERFACESUBMODULE_TEXT" Value="RF180C Interface" />
+          <Text TextId="IDT_Subslot_8000" Value="X1" />
+          <Text TextId="IDT_Subslot_8001" Value="X1 P1" />
+          <Text TextId="IDT_Subslot_8002" Value="X1 P2" />
+          <Text TextId="IDT_Port1" Value="Port 1" />
+          <Text TextId="IDT_Port2" Value="Port 2" />
+        </Language>
+        <Language xml:lang="fr">
+          <Text TextId="IDT_FamilyDescription" Value="Modules de communication pour la connexion de une station d'ecriture/lecture a PROFINET IO" />
+          <Text TextId="IDT_MODULE_NAME_DAP1" Value="RF180C V1.0" />
+          <Text TextId="IDT_MODULE_NAME_DAP2" Value="RF180C V2.2" />
+          <Text TextId="IDT_INFO_DAP" Value="Module de communication RF180C (IP67) pour la connexion de deux stations d'ecriture/lecture a PROFINET IO" />
+          <Text TextId="IDT_Standard_no_PDEV" Value="Standard, no PDEV" />
+          <Text TextId="IDT_Standard" Value="Standard" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP1" Value="RF180C, for pnio ontroller without physical device" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP2" Value="RF180C, standard" />
+          <Text TextId="IDT_MODULE_NAME_Module1" Value="Connexion de deux stations d'écriture/lecture" />
+          <Text TextId="IDT_INFO_Module1" Value="2 interfaces RS422 pour la connexion de deux stations de ecriture/lecture des systemes de identification" />
+          <Text TextId="IDT_DATAITEM_READER1" Value="Station de ecriture/lecture 1" />
+          <Text TextId="IDT_DATAITEM_READER2" Value="Station de ecriture/lecture 2" />
+          <Text TextId="IDT_GENERAL_PARAMETERS" Value="Parametres généraux" />
+          <Text TextId="IDT_PARA_USER_MODE" Value="User Mode" />
+          <Text TextId="IDT_PARA_MOBY_MODE" Value="MOBY Mode" />
+          <Text TextId="IDT_PARA_BAUDRATE" Value="Vitesse de transmission" />
+          <Text TextId="IDT_PARA_DIAG" Value="Messages de diagnostic" />
+          <Text TextId="IDT_PARA_STARTLED" Value="Desactivation LED de erreur" />
+          <Text TextId="IDT_FB45" Value="FB 45" />
+          <Text TextId="IDT_FB55" Value="FB 55" />
+          <Text TextId="IDT_FB56" Value="FB 56" />
+          <Text TextId="IDT_PIB" Value="Profil normalise RFID" />
+          <Text TextId="IDT_MOBYI" Value="Adressage normal MOBY I/E" />
+          <Text TextId="IDT_MOBYI_FH" Value="Gestionnaire de fichiers MOBY I" />
+          <Text TextId="IDT_MOBYU" Value="Adressage normal RF200/RF300/RF600 MOBY U/D" />
+          <Text TextId="IDT_MOBYU_FH" Value="Gestionnaire de fichiers MOBY U" />
+          <Text TextId="IDT_MOBY300_FH" Value="Gestionnaire de fichiers RF300" />
+          <Text TextId="IDT_19_2" Value="19.2 kBaud" />
+          <Text TextId="IDT_57_6" Value="57.6 kBaud" />
+          <Text TextId="IDT_115_2" Value="115.2 kBaud" />
+          <Text TextId="IDT_KEIN" Value="Aucun(e)" />
+          <Text TextId="IDT_HARD" Value="Erreurs graves" />
+          <Text TextId="IDT_HARD_SOFT" Value="Erreurs graves/legeres" />
+          <Text TextId="IDT_KEINE_ST" Value="None" />
+          <Text TextId="IDT_KANAL_1" Value="channel 1" />
+          <Text TextId="IDT_KANAL_2" Value="channel 2" />
+          <Text TextId="IDT_Diagostics RF180C" Value="Diagnose RF180C: " />
+          <Text TextId="IDT_KEIN_FEHLER" Value="Non Erreur" />
+          <Text TextId="IDT_HOCHLAUF" Value="CM est demarre" />
+          <Text TextId="IDT_KOMMFEHLER" Value="Erreur de liaison au lecture" />
+          <Text TextId="IDT_KURZSCHLUSS" Value="Court-circuit sur lecture" />
+          <Text TextId="IDT_FATAL" Value="Erreur bloquante" />
+          <Text TextId="IDT_HWFEHLER" Value="Defaut materiel" />
+          <Text TextId="IDT_LADERFEHLER" Value="Erreur du chargeur" />
+          <Text TextId="IDT_DOWNLOADACTIV" Value="Chargement active" />
+          <Text TextId="IDT_DOWNLOADFERTIG" Value="Chargement termine" />
+          <Text TextId="IDT_DOWNLOADFEHLER" Value="Erreur de chargement" />
+          <Text TextId="IDT_INTERFACESUBMODULE_TEXT" Value="RF180C Interface" />
+          <Text TextId="IDT_Subslot_8000" Value="X1" />
+          <Text TextId="IDT_Subslot_8001" Value="X1 P1" />
+          <Text TextId="IDT_Subslot_8002" Value="X1 P2" />
+          <Text TextId="IDT_Port1" Value="Port 1" />
+          <Text TextId="IDT_Port2" Value="Port 2" />
+        </Language>
+        <Language xml:lang="it">
+          <Text TextId="IDT_FamilyDescription" Value="Moduli di comunicazione per il collegamento di un reader con PROFINET IO" />
+          <Text TextId="IDT_MODULE_NAME_DAP1" Value="RF180C V1.0" />
+          <Text TextId="IDT_MODULE_NAME_DAP2" Value="RF180C V2.2" />
+          <Text TextId="IDT_INFO_DAP" Value="Modulo di comunicazione RF180C (IP67) per il collegamento di due reader con PROFINET IO" />
+          <Text TextId="IDT_Standard_no_PDEV" Value="Standard, no PDEV" />
+          <Text TextId="IDT_Standard" Value="Standard" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP1" Value="RF180C, for pnio ontroller without physical device" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP2" Value="RF180C, standard" />
+          <Text TextId="IDT_MODULE_NAME_Module1" Value="Collegamento di due reader" />
+          <Text TextId="IDT_INFO_Module1" Value="2 interfacce RS422 per il collegamento di due reader per sistemi di identificazione" />
+          <Text TextId="IDT_DATAITEM_READER1" Value="Reader 1" />
+          <Text TextId="IDT_DATAITEM_READER2" Value="Reader 2" />
+          <Text TextId="IDT_GENERAL_PARAMETERS" Value="Parametri generali" />
+          <Text TextId="IDT_PARA_USER_MODE" Value="User Mode" />
+          <Text TextId="IDT_PARA_MOBY_MODE" Value="MOBY mode" />
+          <Text TextId="IDT_PARA_BAUDRATE" Value="Velocità di transmissione" />
+          <Text TextId="IDT_PARA_DIAG" Value="Messaggi di diagnostica" />
+          <Text TextId="IDT_PARA_STARTLED" Value="Soppressione LED di errore" />
+          <Text TextId="IDT_FB45" Value="FB 45" />
+          <Text TextId="IDT_FB55" Value="FB 55" />
+          <Text TextId="IDT_FB56" Value="FB 56" />
+          <Text TextId="IDT_PIB" Value="Profilo normale RFID" />
+          <Text TextId="IDT_MOBYI" Value="Indirizzamento normale MOBY I/E" />
+          <Text TextId="IDT_MOBYI_FH" Value="Gestore file MOBY I" />
+          <Text TextId="IDT_MOBYU" Value="Indirizzamento norm. RF200/RF300/RF600 MOBY U/D" />
+          <Text TextId="IDT_MOBYU_FH" Value="Gestore file MOBY U" />
+          <Text TextId="IDT_MOBY300_FH" Value="Gestore file RF300" />
+          <Text TextId="IDT_19_2" Value="19.2 kBaud" />
+          <Text TextId="IDT_57_6" Value="57.6 kBaud" />
+          <Text TextId="IDT_115_2" Value="115.2 kBaud" />
+          <Text TextId="IDT_KEIN" Value="Nessuno" />
+          <Text TextId="IDT_HARD" Value="Errori gravi" />
+          <Text TextId="IDT_HARD_SOFT" Value="Errori gravi/lievi" />
+          <Text TextId="IDT_KEINE_ST" Value="None" />
+          <Text TextId="IDT_KANAL_1" Value="channel 1" />
+          <Text TextId="IDT_KANAL_2" Value="channel 2" />
+          <Text TextId="IDT_Diagostics RF180C" Value="Diagnose RF180C: " />
+          <Text TextId="IDT_KEIN_FEHLER" Value="No Errore" />
+          <Text TextId="IDT_HOCHLAUF" Value="CM in funzionamento" />
+          <Text TextId="IDT_KOMMFEHLER" Value="Errore di collegamento della reader" />
+          <Text TextId="IDT_KURZSCHLUSS" Value="Cortocircuito nella reader" />
+          <Text TextId="IDT_FATAL" Value="Errore grave" />
+          <Text TextId="IDT_HWFEHLER" Value="Errore hardware" />
+          <Text TextId="IDT_LADERFEHLER" Value="Errore caricatore" />
+          <Text TextId="IDT_DOWNLOADACTIV" Value="Download attivo" />
+          <Text TextId="IDT_DOWNLOADFERTIG" Value="Fine download" />
+          <Text TextId="IDT_DOWNLOADFEHLER" Value="Errore download" />
+          <Text TextId="IDT_INTERFACESUBMODULE_TEXT" Value="RF180C Interface" />
+          <Text TextId="IDT_Subslot_8000" Value="X1" />
+          <Text TextId="IDT_Subslot_8001" Value="X1 P1" />
+          <Text TextId="IDT_Subslot_8002" Value="X1 P2" />
+          <Text TextId="IDT_Port1" Value="Port 1" />
+          <Text TextId="IDT_Port2" Value="Port 2" />
+        </Language>
+        <Language xml:lang="es">
+          <Text TextId="IDT_FamilyDescription" Value="Modulo interfaz conectado a  un aparato escritura/lectura vía PROFINET IO" />
+          <Text TextId="IDT_MODULE_NAME_DAP1" Value="RF180C V1.0" />
+          <Text TextId="IDT_MODULE_NAME_DAP2" Value="RF180C V2.2" />
+          <Text TextId="IDT_INFO_DAP" Value="Modulo interfaz RF180C (IP67) conectado a 2 aparatos escritura/lectura vía PROFINET IO" />
+          <Text TextId="IDT_Standard_no_PDEV" Value="Standard, no PDEV" />
+          <Text TextId="IDT_Standard" Value="Standard" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP1" Value="RF180C, for pnio ontroller without physical device" />
+          <Text TextId="IDT_ModInfo_InfoTextId_DAP2" Value="RF180C, standard" />
+          <Text TextId="IDT_MODULE_NAME_Module1" Value="Conección de dos aparatos escritura/lectura" />
+          <Text TextId="IDT_INFO_Module1" Value="2x  interfaces RS422 para conectar dos aparatos escritura/lectura de los sistemas de identifición" />
+          <Text TextId="IDT_DATAITEM_READER1" Value="Aparato escritura/lectura 1" />
+          <Text TextId="IDT_DATAITEM_READER2" Value="Aparato escritura/lectura 2" />
+          <Text TextId="IDT_GENERAL_PARAMETERS" Value="Parámetros generales" />
+          <Text TextId="IDT_PARA_USER_MODE" Value="User Mode" />
+          <Text TextId="IDT_PARA_MOBY_MODE" Value="MOBY Mode" />
+          <Text TextId="IDT_PARA_BAUDRATE" Value="Velocidad de transferencia al lectura" />
+          <Text TextId="IDT_PARA_DIAG" Value="Aviso de diagnóstico" />
+          <Text TextId="IDT_PARA_STARTLED" Value="Supresión del LED de error" />
+          <Text TextId="IDT_FB45" Value="FB 45" />
+          <Text TextId="IDT_FB55" Value="FB 55" />
+          <Text TextId="IDT_FB56" Value="FB 56" />
+          <Text TextId="IDT_PIB" Value="Perfil normalizado RFID" />
+          <Text TextId="IDT_MOBYI" Value="Direccionamiento normal MOBY I/E" />
+          <Text TextId="IDT_MOBYI_FH" Value="Filehandler MOBY I" />
+          <Text TextId="IDT_MOBYU" Value="Direccionamiento normal RF200/RF300/RF600 MOBY U/D" />
+          <Text TextId="IDT_MOBYU_FH" Value="Filehandler MOBY U" />
+          <Text TextId="IDT_MOBY300_FH" Value="Filehandler RF300" />
+          <Text TextId="IDT_19_2" Value="19.2 kBaud" />
+          <Text TextId="IDT_57_6" Value="57.6 kBaud" />
+          <Text TextId="IDT_115_2" Value="115.2 kBaud" />
+          <Text TextId="IDT_KEIN" Value="Ninguno" />
+          <Text TextId="IDT_HARD" Value="Errores graves" />
+          <Text TextId="IDT_HARD_SOFT" Value="Errores graves/ligeros" />
+          <Text TextId="IDT_KEINE_ST" Value="None" />
+          <Text TextId="IDT_KANAL_1" Value="channel 1" />
+          <Text TextId="IDT_KANAL_2" Value="channel 2" />
+          <Text TextId="IDT_Diagostics RF180C" Value="diagnosis RF180C: " />
+          <Text TextId="IDT_KEIN_FEHLER" Value="No Error" />
+          <Text TextId="IDT_HOCHLAUF" Value="CM iniciado" />
+          <Text TextId="IDT_KOMMFEHLER" Value="Error de coneccion con el lectura" />
+          <Text TextId="IDT_KURZSCHLUSS" Value="Cortocirc. en la conec. del lectura" />
+          <Text TextId="IDT_FATAL" Value="Error grave" />
+          <Text TextId="IDT_HWFEHLER" Value="Error hardware" />
+          <Text TextId="IDT_LADERFEHLER" Value="Error cargador" />
+          <Text TextId="IDT_DOWNLOADACTIV" Value="Descarga activada" />
+          <Text TextId="IDT_DOWNLOADFERTIG" Value="Descarga terminada" />
+          <Text TextId="IDT_DOWNLOADFEHLER" Value="Error descarga" />
+          <Text TextId="IDT_INTERFACESUBMODULE_TEXT" Value="RF180C Interface" />
+          <Text TextId="IDT_Subslot_8000" Value="X1" />
+          <Text TextId="IDT_Subslot_8001" Value="X1 P1" />
+          <Text TextId="IDT_Subslot_8002" Value="X1 P2" />
+          <Text TextId="IDT_Port1" Value="Port 1" />
+          <Text TextId="IDT_Port2" Value="Port 2" />
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>
